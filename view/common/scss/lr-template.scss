@@ -1,0 +1,114 @@
+@import "./lr-header.scss";
+
+article {
+  width: 100%;
+  min-width: 1200px;
+  @include clearfix;
+  height: 969px;
+  min-height: calc(100% - 61px);
+  position:relative;
+  .left {
+    float: left;
+    width: 30%;
+    background: url("../img/lrLeftBg.png");
+    background-repeat: repeat;
+    height:100%;
+    .header {
+      height: 50px;
+      background: rgb(55, 157, 107);
+      padding-left:50%;
+      h2 {
+        color: #fff;
+        font-size: 20px;
+        line-height: 50px;
+      }
+    }
+    .navList {
+      ul {
+        padding-left: 50%;
+        margin-top: 40px;
+        li {
+          margin: 30px 0;
+          cursor: pointer;
+          a{
+            color:#000;
+            text-decoration: none;
+          }
+        }
+        li.active {
+          a{
+            color: rgb(55, 157, 107);
+          }
+        }
+      }
+    }
+  }
+  .right {
+    float: left;
+    width: 70%;
+    height:100%;
+    .header {
+      height: 50px;
+      background: rgb(234, 234, 234);
+      div {
+        color: #3a3a3a;
+        font-size: 15px;
+        line-height: 50px;
+        text-align: right;
+        margin-right: 50px;
+        a{
+          color:#3a3a3a;
+        }
+      }
+    }
+    .content-wrapper {
+      height:calc(100% - 50px);
+      position: relative;
+      overflow-y: hidden;
+    }
+    section{
+      width: 900px;
+      padding-left: 90px;
+      margin-bottom: 150px;
+      .anchor{
+        font-size: 21px;
+        font-weight: normal;
+        line-height: 50px;
+        border-bottom: 1px solid #379e6b;
+      }
+      .title {
+        font-size: 18px;
+        color: #379e6b;
+        margin: 30px 0;
+      }
+      span {
+        font-size: 15px;
+      }
+      ul.lists {
+        margin: 50px 0;
+        li {
+          margin: 30px 55px 0;
+          position: relative;
+          i {
+            position: absolute;
+            top: 5px;
+            left: -57px;
+            font-size: 34px;
+            color: #ca3f00;
+          }
+          h4 {
+            font-size: 18px;
+            color: #ca3f00;
+            margin: 10px 0;
+          }
+        }
+      }
+      ul.searcher-list {
+        li {
+          margin: 15px 0;
+        }
+      }
+    }
+  }
+
+}
