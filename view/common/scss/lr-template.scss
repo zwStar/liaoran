@@ -36,8 +36,9 @@ article {
           }
         }
         li.active {
-          a{
-            color: rgb(55, 157, 107);
+          color: rgb(55, 157, 107);
+          .iconfont{
+            transform: rotate(90deg);
           }
         }
       }
