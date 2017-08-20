@@ -13,7 +13,8 @@ module.exports = {
         articles:"./entry/articles.js",
         article:"./entry/article.js",
         companyEnterprise:"./entry/companyEnterprise.js",
-        evaluation:"./entry/evaluation.js"
+        evaluation:"./entry/evaluation.js",
+        community:"./entry/community.js"
     },
     output: {
         path: path.resolve("./build"), //输出目录的配置，模板、样式、脚本、图片等资源的路径配置都相对于它
@@ -64,7 +65,7 @@ module.exports = {
         new ExtractTextPlugin('css/[name].css'),
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendors', // 将公共模块提取，生成名为`vendors`的chunk
-            chunks: ['index','aboutUs','articles','article','companyEnterprise','evaluation'], //提取哪些模块共有的部分
+            chunks: ['index','aboutUs','articles','article','companyEnterprise','evaluation','community'], //提取哪些模块共有的部分
             // minChunks: 7 // 提取至少3个模块共有的部分
         }),
         //主页
@@ -128,6 +129,16 @@ module.exports = {
             template: path.resolve(__dirname, 'view/evaluation/evaluation.html'),
             inject: 'body',
             chunks: ['vendors','evaluation'],   //需要引入的chunk，不配置就会引入所有页面的资源
+            minify: {
+                removeComments: false,
+                collapseWhitespace: false
+            }
+        }),
+        new HtmlWebpackPlugin({
+            filename: './community.html',
+            template: path.resolve(__dirname, 'view/community/community.html'),
+            inject: 'body',
+            chunks: ['vendors','community'],   //需要引入的chunk，不配置就会引入所有页面的资源
             minify: {
                 removeComments: false,
                 collapseWhitespace: false
