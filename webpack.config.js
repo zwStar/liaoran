@@ -9,12 +9,13 @@ var HtmlWebpackPlugin = require('html-webpack-plugin'); //每个html文件自动
 module.exports = {
     entry: {
         index: "./entry/index.js",
-        aboutUs:"./entry/aboutUs.js",
-        articles:"./entry/articles.js",
-        article:"./entry/article.js",
-        companyEnterprise:"./entry/companyEnterprise.js",
-        evaluation:"./entry/evaluation.js",
-        government:"./entry/government.js"
+        aboutUs: "./entry/aboutUs.js",
+        articles: "./entry/articles.js",
+        article: "./entry/article.js",
+        companyEnterprise: "./entry/companyEnterprise.js",
+        evaluation: "./entry/evaluation.js",
+        government: "./entry/government.js",
+        community: "./entry/community.js"
     },
     output: {
         path: path.resolve("./build"), //输出目录的配置，模板、样式、脚本、图片等资源的路径配置都相对于它
@@ -58,14 +59,15 @@ module.exports = {
     },
     plugins: [
         new webpack.ProvidePlugin({
-            $:"jquery",
-            jQuery:"jquery",
-            "window.jQuery":"jquery"
+            $: "jquery",
+            jQuery: "jquery",
+            "window.jQuery": "jquery"
         }),
         new ExtractTextPlugin('css/[name].css'),
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendors', // 将公共模块提取，生成名为`vendors`的chunk
-            chunks: ['index','aboutUs','articles','article','companyEnterprise','evaluation','government'], //提取哪些模块共有的部分
+
+            chunks: ['index', 'aboutUs', 'articles', 'article', 'companyEnterprise', 'evaluation', 'community'], //提取哪些模块共有的部分
             // minChunks: 7 // 提取至少3个模块共有的部分
         }),
         //主页
@@ -73,7 +75,7 @@ module.exports = {
             filename: './index.html',
             template: path.resolve(__dirname, 'view/index/index.html'),
             inject: 'body',
-            chunks: ['vendors','index'],//需要引入的chunk，不配置就会引入所有页面的资源
+            chunks: ['vendors', 'index'],//需要引入的chunk，不配置就会引入所有页面的资源
             minify: {
                 removeComments: false,
                 collapseWhitespace: false
@@ -84,7 +86,7 @@ module.exports = {
             filename: './aboutUs.html',
             template: path.resolve(__dirname, 'view/aboutUs/aboutUs.html'),
             inject: 'body',
-            chunks: ['vendors','aboutUs'],//需要引入的chunk，不配置就会引入所有页面的资源
+            chunks: ['vendors', 'aboutUs'],//需要引入的chunk，不配置就会引入所有页面的资源
             minify: {
                 removeComments: false,
                 collapseWhitespace: false
@@ -95,7 +97,7 @@ module.exports = {
             filename: './articles.html',
             template: path.resolve(__dirname, 'view/articles/articles.html'),
             inject: 'body',
-            chunks: ['vendors','articles'],//需要引入的chunk，不配置就会引入所有页面的资源
+            chunks: ['vendors', 'articles'],//需要引入的chunk，不配置就会引入所有页面的资源
             minify: {
                 removeComments: false,
                 collapseWhitespace: false
@@ -106,7 +108,7 @@ module.exports = {
             filename: './article.html',
             template: path.resolve(__dirname, 'view/article/article.html'),
             inject: 'body',
-            chunks: ['vendors','article'],//需要引入的chunk，不配置就会引入所有页面的资源
+            chunks: ['vendors', 'article'],//需要引入的chunk，不配置就会引入所有页面的资源
             minify: {
                 removeComments: false,
                 collapseWhitespace: false
@@ -117,7 +119,7 @@ module.exports = {
             filename: './companyEnterprise.html',
             template: path.resolve(__dirname, 'view/companyEnterprise/companyEnterprise.html'),
             inject: 'body',
-            chunks: ['vendors','companyEnterprise'],//需要引入的chunk，不配置就会引入所有页面的资源
+            chunks: ['vendors', 'companyEnterprise'],//需要引入的chunk，不配置就会引入所有页面的资源
             minify: {
                 removeComments: false,
                 collapseWhitespace: false
@@ -128,7 +130,7 @@ module.exports = {
             filename: './evaluation.html',
             template: path.resolve(__dirname, 'view/evaluation/evaluation.html'),
             inject: 'body',
-            chunks: ['vendors','evaluation'],   //需要引入的chunk，不配置就会引入所有页面的资源
+            chunks: ['vendors', 'evaluation'],   //需要引入的chunk，不配置就会引入所有页面的资源
             minify: {
                 removeComments: false,
                 collapseWhitespace: false
@@ -139,7 +141,17 @@ module.exports = {
             filename: './government.html',
             template: path.resolve(__dirname, 'view/government/government.html'),
             inject: 'body',
-            chunks: ['vendors','government'],   //需要引入的chunk，不配置就会引入所有页面的资源
+            chunks: ['vendors', 'government'],   //需要引入的chunk，不配置就会引入所有页面的资源
+            minify: {
+                removeComments: false,
+                collapseWhitespace: false
+            }
+        }),
+        new HtmlWebpackPlugin({
+            filename: './community.html',
+            template: path.resolve(__dirname, 'view/community/community.html'),
+            inject: 'body',
+            chunks: ['vendors', 'community'],   //需要引入的chunk，不配置就会引入所有页面的资源
             minify: {
                 removeComments: false,
                 collapseWhitespace: false
