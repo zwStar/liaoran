@@ -1,11 +1,11 @@
-webpackJsonp([0],[
-/* 0 */
+webpackJsonp([1],[
+/* 0 */,
+/* 1 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 1 */,
 /* 2 */,
 /* 3 */,
 /* 4 */,
@@ -21,7 +21,7 @@ webpackJsonp([0],[
  */
 __webpack_require__(2);
 __webpack_require__(3);
-__webpack_require__(0);
+__webpack_require__(1);
 
 __webpack_require__(10);
 
@@ -292,7 +292,7 @@ __webpack_require__(12);
     }
 
     //文章模板
-    var template = ['<section class="articles">     ', '  <div class="img-wrapper">', '<img src="{{mainImg}}">', '</div>', '        <span class="publisher">{{publisher}}</span><span class="time">{{date}}</span>', '        <h3><a href="./lr-article.html?id={{id}}&type={{type}}">{{title}}</a></h3>', '        <div class="intro">', '            {{intro}}', '        </div>', '        <a class="article-footer" href="#">{{artcilesType}}</a>', '    </section>'].join("");
+    var template = ['<section class="articles">     ', '  <div class="img-wrapper">', '<img src="{{mainImg}}">', '</div>', '        <span class="publisher">{{publisher}}</span><span class="time">{{date}}</span>', '        <h3><a href="./article.html?id={{id}}&type={{type}}">{{title}}</a></h3>', '        <div class="intro">', '            {{intro}}', '        </div>', '        <a class="article-footer" href="#">{{artcilesType}}</a>', '    </section>'].join("");
 
     Pagination.prototype = {
         init: function () {
@@ -302,7 +302,7 @@ __webpack_require__(12);
             var reType = /type=([\w]+)&?/; //匹配类型正则
             _this.type = url.match(reType) && url.match(reType)[1] || "theory";
             template = template.replace("{{type}}", _this.type);
-            _this.base_url = "http://127.0.0.1:8080/build/lr-articles.html?type=" + _this.type + "&page={{page}}"; //获取文章类型和第几页
+            _this.base_url = "http://www.gdliaoran.com/articles.html?type=" + _this.type + "&page={{page}}"; //获取文章类型和第几页
             _this.changeActive(_this.type); //改变左侧高亮
             _this.index = url.match(re) && parseInt(url.match(re)[1]) || 1; //当前第几页
             _this.getArticle(_this.index); //获取文章
@@ -311,7 +311,7 @@ __webpack_require__(12);
         getCount: function () {
             //获取总共有多少文章
             var _this = this;
-            var url = 'http://127.0.0.1:3000/articles/lrArticle/count';
+            var url = 'http://123.207.34.129:3000/articles/lrArticle/count';
             var type = "GET";
             var data = { type: _this.type }; //文章类型
             var callback = function (results) {
@@ -348,7 +348,7 @@ __webpack_require__(12);
         getArticle: function () {
             //获取文章
             var _this = this;
-            var url = 'http://127.0.0.1:3000/articles/lrArticle/get';
+            var url = 'http://123.207.34.129:3000/articles/lrArticle/get';
             var type = "GET";
             var data = { type: _this.type, count: _this.PageNum, index: _this.index };
             var callback = function (results) {
@@ -385,7 +385,7 @@ __webpack_require__(12);
         navList: $(".navList")
     });
 })(__webpack_provided_window_dot_jQuery);
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
 /* 12 */

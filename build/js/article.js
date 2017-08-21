@@ -1,6 +1,6 @@
-webpackJsonp([2],{
+webpackJsonp([4],{
 
-/***/ 0:
+/***/ 1:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
@@ -15,7 +15,7 @@ webpackJsonp([2],{
  */
 __webpack_require__(2);
 __webpack_require__(3);
-__webpack_require__(0);
+__webpack_require__(1);
 
 __webpack_require__(14);
 __webpack_require__(15);
@@ -86,7 +86,7 @@ __webpack_require__(15);
     }
 
     $.ajax({
-        url: "http://127.0.0.1:3000/articles/lrArticle/find",
+        url: "http://123.207.34.129:3000/articles/lrArticle/find",
         type: 'get',
         data: {
             _id: id
@@ -99,7 +99,7 @@ __webpack_require__(15);
         }
     });
 })(__webpack_provided_window_dot_jQuery);
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ })
 

@@ -56,7 +56,7 @@
 
 
     $.ajax({
-        url: "http://127.0.0.1:3000/articles/lrArticle/find",
+        url: "http://123.207.34.129:3000/articles/lrArticle/find",
         type: 'get',
         data: {
             _id: id

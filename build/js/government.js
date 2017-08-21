@@ -1,41 +1,6 @@
 /******/ (function(modules) { // webpackBootstrap
-/******/ 	// install a JSONP callback for chunk loading
-/******/ 	var parentJsonpFunction = window["webpackJsonp"];
-/******/ 	window["webpackJsonp"] = function webpackJsonpCallback(chunkIds, moreModules, executeModules) {
-/******/ 		// add "moreModules" to the modules object,
-/******/ 		// then flag all "chunkIds" as loaded and fire callback
-/******/ 		var moduleId, chunkId, i = 0, resolves = [], result;
-/******/ 		for(;i < chunkIds.length; i++) {
-/******/ 			chunkId = chunkIds[i];
-/******/ 			if(installedChunks[chunkId]) {
-/******/ 				resolves.push(installedChunks[chunkId][0]);
-/******/ 			}
-/******/ 			installedChunks[chunkId] = 0;
-/******/ 		}
-/******/ 		for(moduleId in moreModules) {
-/******/ 			if(Object.prototype.hasOwnProperty.call(moreModules, moduleId)) {
-/******/ 				modules[moduleId] = moreModules[moduleId];
-/******/ 			}
-/******/ 		}
-/******/ 		if(parentJsonpFunction) parentJsonpFunction(chunkIds, moreModules, executeModules);
-/******/ 		while(resolves.length) {
-/******/ 			resolves.shift()();
-/******/ 		}
-/******/ 		if(executeModules) {
-/******/ 			for(i=0; i < executeModules.length; i++) {
-/******/ 				result = __webpack_require__(__webpack_require__.s = executeModules[i]);
-/******/ 			}
-/******/ 		}
-/******/ 		return result;
-/******/ 	};
-/******/
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
-/******/
-/******/ 	// objects to store loaded and loading chunks
-/******/ 	var installedChunks = {
-/******/ 		8: 0
-/******/ 	};
 /******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
@@ -61,55 +26,6 @@
 /******/ 		return module.exports;
 /******/ 	}
 /******/
-/******/ 	// This file contains only the entry chunk.
-/******/ 	// The chunk loading function for additional chunks
-/******/ 	__webpack_require__.e = function requireEnsure(chunkId) {
-/******/ 		var installedChunkData = installedChunks[chunkId];
-/******/ 		if(installedChunkData === 0) {
-/******/ 			return new Promise(function(resolve) { resolve(); });
-/******/ 		}
-/******/
-/******/ 		// a Promise means "currently loading".
-/******/ 		if(installedChunkData) {
-/******/ 			return installedChunkData[2];
-/******/ 		}
-/******/
-/******/ 		// setup Promise in chunk cache
-/******/ 		var promise = new Promise(function(resolve, reject) {
-/******/ 			installedChunkData = installedChunks[chunkId] = [resolve, reject];
-/******/ 		});
-/******/ 		installedChunkData[2] = promise;
-/******/
-/******/ 		// start chunk loading
-/******/ 		var head = document.getElementsByTagName('head')[0];
-/******/ 		var script = document.createElement('script');
-/******/ 		script.type = 'text/javascript';
-/******/ 		script.charset = 'utf-8';
-/******/ 		script.async = true;
-/******/ 		script.timeout = 120000;
-/******/
-/******/ 		if (__webpack_require__.nc) {
-/******/ 			script.setAttribute("nonce", __webpack_require__.nc);
-/******/ 		}
-/******/ 		script.src = __webpack_require__.p + "js/" + ({"0":"community","1":"articles","2":"evaluation","3":"companyEnterprise","4":"article","5":"aboutUs","6":"index"}[chunkId]||chunkId) + ".chunk.js";
-/******/ 		var timeout = setTimeout(onScriptComplete, 120000);
-/******/ 		script.onerror = script.onload = onScriptComplete;
-/******/ 		function onScriptComplete() {
-/******/ 			// avoid mem leaks in IE.
-/******/ 			script.onerror = script.onload = null;
-/******/ 			clearTimeout(timeout);
-/******/ 			var chunk = installedChunks[chunkId];
-/******/ 			if(chunk !== 0) {
-/******/ 				if(chunk) {
-/******/ 					chunk[1](new Error('Loading chunk ' + chunkId + ' failed.'));
-/******/ 				}
-/******/ 				installedChunks[chunkId] = undefined;
-/******/ 			}
-/******/ 		};
-/******/ 		head.appendChild(script);
-/******/
-/******/ 		return promise;
-/******/ 	};
 /******/
 /******/ 	// expose the modules object (__webpack_modules__)
 /******/ 	__webpack_require__.m = modules;
@@ -143,8 +59,8 @@
 /******/ 	// __webpack_public_path__
 /******/ 	__webpack_require__.p = "/build/";
 /******/
-/******/ 	// on error function for async loading
-/******/ 	__webpack_require__.oe = function(err) { console.error(err); throw err; };
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 20);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -9978,7 +9894,12 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 });
 
 /***/ }),
-/* 1 */,
+/* 1 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
 /* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10024,6 +9945,166 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 
 // removed by extract-text-webpack-plugin
 
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(__webpack_provided_window_dot_jQuery, $) {/**
+ * Created by admin on 2017/8/16.
+ */
+/**
+ * Created by admin on 2017/8/16.
+ */
+
+(function ($, plug) {
+    $.fn[plug] = function () {
+        $.extend(this, __PROTO__, __bindEvent);
+        this.init();
+    };
+
+    var __PROTO__ = {
+        init: function () {
+            this.anchor = $(".anchor"); //喵点
+            this.leftList = $(".navList").find("li"); //左侧列表
+            this.content = $(".content-wrapper"); //右侧容器
+            this.anchorArr = []; //获取喵点位置
+
+            this.getAnchorArr(); //获取喵点位置
+            this.ListClick(); //绑定左侧列表点击事件
+            this.scrollEvent(); //滚动条滚动事件
+            this.wheelSlide(); //滑轮滚动事件
+            this.showDownList(); //如果左边导航第一项有下拉列表则显示下拉列表
+        },
+        getAnchorArr: function () {
+            //获取喵点位置
+            var _this = this;
+            for (var i = 0; i < this.anchor.length; i++) {
+                _this.anchorArr.push(this.anchor.eq(i).position().top);
+            }
+        },
+        getScrollIndex: function () {
+            var j = 0;
+            for (var i = this.anchor.length - 1; i > 0; i--) {
+                if (this.scrollTop() > (this.anchorArr[i] + this.anchorArr[i - 1]) / 2) {
+                    j = i;
+                    return j;
+                }
+                if (this.content[0].scrollHeight <= this.scrollTop() + this.content.height() + 100) {
+                    console.log("1111111");
+                }
+            }
+            return j;
+        }
+    };
+    var __bindEvent = {
+        ListClick: function () {
+            //左侧点击事件
+
+            var _this = this;
+            _this.leftList.on("click", function () {
+                $(this).addClass("active").siblings().removeClass("active"); //为点击增加active 并且remove其它li的active
+                $(".downList").css({
+                    'height': '0px',
+                    'opacity': 0,
+                    'margin-top': '0px'
+                });
+                if ($(this).find(".downList").length == 0) {
+
+                    _this.content.scrollTop(_this.anchorArr[$(this).index()]); //滚动到相应的位置
+                } else {
+
+                    var downList = $(this).find(".downList");
+                    _this.showDownList(downList);
+                }
+            });
+        },
+        scrollEvent: function () {
+            var _this = this;
+
+            _this.content.on("scroll", function (event) {
+                _this.listActive();
+            });
+        },
+        listActive: function () {
+            var index;
+            var last;
+            var temp;
+            var _this = this;
+            temp = _this.getScrollIndex();
+            if (temp !== index) {
+                //如果位置有变化 再执行左侧list变化
+                last = index;
+                index = temp;
+                _this.leftList.eq(index).addClass("active").siblings().removeClass("active");
+            }
+        },
+        scrollTo: function (position) {
+            var _this = this;
+            _this.content.scrollTop(position);
+            _this.listActive();
+        },
+        wheelSlide: function () {
+            var _this = this;
+            var wheelrate = 30;
+            var position = 0;
+            _this.content.on("mousewheel DOMMouseScroll", function (e) {
+                var oev = e.originalEvent;
+                position = (oev.wheelDelta ? -oev.wheelDelta / 120 : oev.detail / 3) * wheelrate + this.scrollTop;
+                _this.scrollTo(position);
+            });
+        },
+        showDownList: function (downList) {
+            downList = downList || $(".navList li:eq(0) .downList");
+            if (downList) {
+                $(downList).css({
+                    'height': downList.children().length * 23 + 'px',
+                    'opacity': 1,
+                    'margin-top': '5px'
+                });
+            }
+        }
+    };
+})(__webpack_provided_window_dot_jQuery, "ScrollAuto");
+
+$(function () {
+    $(".content-wrapper").ScrollAuto();
+});
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0), __webpack_require__(0)))
+
+/***/ }),
+/* 5 */,
+/* 6 */,
+/* 7 */,
+/* 8 */,
+/* 9 */,
+/* 10 */,
+/* 11 */,
+/* 12 */,
+/* 13 */,
+/* 14 */,
+/* 15 */,
+/* 16 */,
+/* 17 */,
+/* 18 */,
+/* 19 */,
+/* 20 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/**
+ * Created by admin on 2017/8/19.
+ */
+__webpack_require__(2);
+__webpack_require__(3);
+__webpack_require__(1);
+__webpack_require__(4);
+__webpack_require__(21);
+
+/***/ }),
+/* 21 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
 /***/ })
 /******/ ]);
-//# sourceMappingURL=vendors.js.map
+//# sourceMappingURL=government.js.map

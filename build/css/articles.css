@@ -218,8 +218,23 @@ article {
         article .left .navList ul li a {
           color: #000;
           text-decoration: none; }
+        article .left .navList ul li .iconfont {
+          display: inline-block;
+          transition: transform .5s ease-in;
+          transform: rotate(0deg); }
+        article .left .navList ul li .downList {
+          overflow: hidden;
+          height: 0;
+          opacity: 0;
+          transition: height .5s ease-in , opacity .5s ease-in;
+          line-height: 23px;
+          font-size: 14px;
+          margin-left: 16px;
+          color: black; }
       article .left .navList ul li.active {
         color: #379d6b; }
+        article .left .navList ul li.active .iconfont {
+          transform: rotate(90deg); }
   article .right {
     float: left;
     width: 70%;
@@ -269,6 +284,8 @@ article {
             font-size: 18px;
             color: #ca3f00;
             margin: 10px 0; }
+      article .right section ul.resetMargin li {
+        margin: 30px 0 0 0; }
       article .right section ul.searcher-list li {
         margin: 15px 0; }
 @charset "UTF-8";

@@ -93,7 +93,7 @@
         '							</a>',
         '						</li><!-- ',
         '					 --><li>',
-        '					 		<a href="">',
+        '					 		<a href="./community.html">',
         '					 			社区合作服务项目',
         '					 			<div class="border"></div>',
         '					 		</a>',
