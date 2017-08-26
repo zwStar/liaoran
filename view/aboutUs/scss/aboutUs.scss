@@ -3,9 +3,10 @@
     background: #ebedf3;
     .content{
       position: absolute;
-      top: 40%;
+      top: 30%;
       left: 50%;
       width: 80%;
+      transform: translateY(-50%);
       color: #6d3d3d;
       opacity: 0;
       animation: showContent 1.5s linear;

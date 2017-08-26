@@ -1,0 +1,27 @@
+article .right{
+    section.principal,section.executives{
+        span{
+            color: #ca3f00;
+            font-size: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        p{
+            margin-top: 20px;
+            line-height: 28px;
+        }
+        ul{
+            li{
+                margin-top: 8px;
+                color: #264e65;
+            }
+        }
+    }
+    section.executives{
+        .title{
+            margin: 15px 0;
+        }
+    }
+}
