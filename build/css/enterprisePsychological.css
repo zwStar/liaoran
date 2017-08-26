@@ -101,36 +101,23 @@ article {
         margin: 30px 0 0 0; }
       article .right section ul.searcher-list li {
         margin: 15px 0; }
-.right .content-wrapper {
-  background: #ebedf3; }
-  .right .content-wrapper .content {
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    width: 80%;
-    transform: translateY(-50%);
-    color: #6d3d3d;
-    opacity: 0;
-    animation: showContent 1.5s linear;
-    animation-fill-mode: forwards; }
+article .right section.principal span, article .right section.executives span {
+  color: #ca3f00;
+  font-size: 20px;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 20px;
+  margin-bottom: 10px; }
 
-@keyframes showContent {
-  0% {
-    opacity: 0;
-    transform: translate(-50%, 0%); }
-  60% {
-    opacity: 0.4;
-    transform: translate(-50%, -20%); }
-  100% {
-    opacity: 1;
-    transform: translate(-50%, -50%); } }
-  @media screen and (max-width: 1600px) {
-    .right .content-wrapper .content {
-      line-height: 32px;
-      font-size: 17px; } }
-  @media screen and (min-width: 1600px) {
-    .right .content-wrapper .content {
-      line-height: 50px;
-      font-size: 23px; } }
+article .right section.principal p, article .right section.executives p {
+  margin-top: 20px;
+  line-height: 28px; }
 
-/*# sourceMappingURL=aboutUs.css.map*/
+article .right section.principal ul li, article .right section.executives ul li {
+  margin-top: 8px;
+  color: #264e65; }
+
+article .right section.executives .title {
+  margin: 15px 0; }
+
+/*# sourceMappingURL=enterprisePsychological.css.map*/

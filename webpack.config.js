@@ -51,7 +51,6 @@ module.exports = {
             },
             {test: /\.html$/, loader: 'html-loader'},
             {test: /\.js$/, loader: 'babel-loader'},
-            //{test: /\.(png|jpg|gif)$/, loader: 'file-loader?name=../[path][name].[ext]?[hash]'},
             {test: /\.(png|jpg|gif)$/, loader: 'file-loader?name=images/[name].[ext]?[hash]'},
             {test: /\.eot/, loader: 'file?prefix=font/'},
             {test: /\.woff/, loader: 'file?prefix=font/&limit=10000&mimetype=application/font-woff'},
