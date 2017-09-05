@@ -101,36 +101,5 @@ article {
         margin: 30px 0 0 0; }
       article .right section ul.searcher-list li {
         margin: 15px 0; }
-.right .content-wrapper {
-  background: #ebedf3; }
-  .right .content-wrapper .content {
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    width: 80%;
-    transform: translateY(-50%);
-    color: #6d3d3d;
-    opacity: 0;
-    animation: showContent 1.5s linear;
-    animation-fill-mode: forwards; }
 
-@keyframes showContent {
-  0% {
-    opacity: 0;
-    transform: translate(-50%, 0%); }
-  60% {
-    opacity: 0.4;
-    transform: translate(-50%, -20%); }
-  100% {
-    opacity: 1;
-    transform: translate(-50%, -50%); } }
-  @media screen and (max-width: 1600px) {
-    .right .content-wrapper .content {
-      line-height: 32px;
-      font-size: 17px; } }
-  @media screen and (min-width: 1600px) {
-    .right .content-wrapper .content {
-      line-height: 50px;
-      font-size: 23px; } }
-
-/*# sourceMappingURL=aboutUs.css.map*/
+/*# sourceMappingURL=educationHeart.css.map*/

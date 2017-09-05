@@ -35,6 +35,18 @@ header {
   min-width: 1200px;
   position: absolute;
   padding-bottom: 20px; }
+  header .logo {
+    display: inline-block;
+    height: auto;
+    margin-left: 14%; }
+    header .logo span {
+      display: inline-block;
+      background-repeat: no-repeat;
+      background-image: url("http://or8jgxyps.bkt.clouddn.com/logo.png");
+      width: 110px;
+      height: 40px;
+      background-size: contain;
+      margin: .5em .5em 0 0; }
   header:after {
     content: "";
     display: table;
@@ -184,193 +196,6 @@ footer {
   line-height: 25px;
   color: rgba(255, 255, 255, 0.9);
   font-size: 13px; }
-@charset "UTF-8";
-@font-face {
-  font-family: 'iconfont';
-  /* project id 372423 */
-  src: url("http://at.alicdn.com/t/font_372423_z5pzgkzucfqg2e29.eot");
-  src: url("http://at.alicdn.com/t/font_372423_z5pzgkzucfqg2e29.eot?#iefix") format("embedded-opentype"), url("http://at.alicdn.com/t/font_372423_z5pzgkzucfqg2e29.woff") format("woff"), url("http://at.alicdn.com/t/font_372423_z5pzgkzucfqg2e29.ttf") format("truetype"), url("http://at.alicdn.com/t/font_372423_z5pzgkzucfqg2e29.svg#iconfont") format("svg"); }
-
-html, body {
-  width: 100%;
-  height: 100%;
-  overflow-x: hidden; }
-
-.iconfont {
-  font-family: iconfont;
-  font-style: normal; }
-
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: '\5FAE\8F6F\96C5\9ED1'; }
-
-html, body {
-  width: 100%;
-  height: 100%; }
-
-ul, li {
-  list-style: none; }
-
-/*****导航栏更改时需要修改此处******/
-/* 导航栏下拉列表每一项高度 */
-/* 键为导航的索引，值为该项的下拉列表有几项 */
-header {
-  width: 100%;
-  min-width: 1200px;
-  position: absolute;
-  padding-bottom: 20px; }
-  header:after {
-    content: "";
-    display: table;
-    clear: both; }
-  header nav {
-    float: right;
-    margin-top: 20px;
-    margin-right: 32px; }
-    header nav ul {
-      font-weight: lighter;
-      font-size: 16px;
-      color: white; }
-      header nav ul .item {
-        display: inline-block;
-        vertical-align: top;
-        text-align: center;
-        margin-right: 65px;
-        position: relative;
-        padding-bottom: 6px; }
-        header nav ul .item a {
-          color: white;
-          text-decoration: none; }
-        header nav ul .item .pull-down-list {
-          /*导航的下拉列表*/
-          position: absolute;
-          z-index: 999;
-          background: rgba(0, 0, 0, 0.6);
-          margin-top: 6px;
-          width: 100px;
-          height: 0;
-          opacity: 0;
-          transform: translateX(-17%);
-          transition: height 0.65s ease-out,opacity 1.25s ease-in;
-          border-radius: 2.8px; }
-          header nav ul .item .pull-down-list li {
-            padding: 10px  6px;
-            cursor: pointer;
-            position: relative;
-            display: none; }
-            header nav ul .item .pull-down-list li a {
-              color: white;
-              text-decoration: none;
-              position: relative;
-              /*&:hover{
-                  color: #31c27c;
-                  .border{
-                    width: 100%;
-                  }
-                }*/ }
-              header nav ul .item .pull-down-list li a .border {
-                /*鼠标划过导航时底部变化的边框*/
-                position: absolute;
-                z-index: -1;
-                background: transparent;
-                border-bottom: 1px solid #31c27c;
-                width: 0%;
-                height: 100%;
-                left: 50%;
-                top: 50%;
-                transform: translate(-50%, -35%);
-                transition: width 0.8s ease-out; }
-      header nav ul .item:nth-child(5), header nav ul .item:nth-child(4) {
-        /*某两个导航的宽度*/ }
-        header nav ul .item:nth-child(5) .pull-down-list, header nav ul .item:nth-child(4) .pull-down-list {
-          width: 155px; }
-      header nav ul .item:nth-child(1):hover {
-        /*导航的高度伸缩变化动画*/ }
-        header nav ul .item:nth-child(1):hover .pull-down-list {
-          height: 0px;
-          opacity: 1; }
-          header nav ul .item:nth-child(1):hover .pull-down-list li {
-            display: block; }
-            header nav ul .item:nth-child(1):hover .pull-down-list li a:hover {
-              color: #31c27c; }
-              header nav ul .item:nth-child(1):hover .pull-down-list li a:hover .border {
-                width: 100%; }
-      header nav ul .item:nth-child(2):hover {
-        /*导航的高度伸缩变化动画*/ }
-        header nav ul .item:nth-child(2):hover .pull-down-list {
-          height: 164px;
-          opacity: 1; }
-          header nav ul .item:nth-child(2):hover .pull-down-list li {
-            display: block; }
-            header nav ul .item:nth-child(2):hover .pull-down-list li a:hover {
-              color: #31c27c; }
-              header nav ul .item:nth-child(2):hover .pull-down-list li a:hover .border {
-                width: 100%; }
-      header nav ul .item:nth-child(3):hover {
-        /*导航的高度伸缩变化动画*/ }
-        header nav ul .item:nth-child(3):hover .pull-down-list {
-          height: 164px;
-          opacity: 1; }
-          header nav ul .item:nth-child(3):hover .pull-down-list li {
-            display: block; }
-            header nav ul .item:nth-child(3):hover .pull-down-list li a:hover {
-              color: #31c27c; }
-              header nav ul .item:nth-child(3):hover .pull-down-list li a:hover .border {
-                width: 100%; }
-      header nav ul .item:nth-child(4):hover {
-        /*导航的高度伸缩变化动画*/ }
-        header nav ul .item:nth-child(4):hover .pull-down-list {
-          height: 82px;
-          opacity: 1; }
-          header nav ul .item:nth-child(4):hover .pull-down-list li {
-            display: block; }
-            header nav ul .item:nth-child(4):hover .pull-down-list li a:hover {
-              color: #31c27c; }
-              header nav ul .item:nth-child(4):hover .pull-down-list li a:hover .border {
-                width: 100%; }
-      header nav ul .item:nth-child(5):hover {
-        /*导航的高度伸缩变化动画*/ }
-        header nav ul .item:nth-child(5):hover .pull-down-list {
-          height: 205px;
-          opacity: 1; }
-          header nav ul .item:nth-child(5):hover .pull-down-list li {
-            display: block; }
-            header nav ul .item:nth-child(5):hover .pull-down-list li a:hover {
-              color: #31c27c; }
-              header nav ul .item:nth-child(5):hover .pull-down-list li a:hover .border {
-                width: 100%; }
-      header nav ul .item:nth-child(6):hover {
-        /*导航的高度伸缩变化动画*/ }
-        header nav ul .item:nth-child(6):hover .pull-down-list {
-          height: 0px;
-          opacity: 1; }
-          header nav ul .item:nth-child(6):hover .pull-down-list li {
-            display: block; }
-            header nav ul .item:nth-child(6):hover .pull-down-list li a:hover {
-              color: #31c27c; }
-              header nav ul .item:nth-child(6):hover .pull-down-list li a:hover .border {
-                width: 100%; }
-      header nav ul .active {
-        /*导航激活时的样式*/
-        color: #31c27c; }
-        header nav ul .active a {
-          color: #31c27c !important; }
-
-.relativeHeader {
-  position: relative !important;
-  background: rgba(0, 0, 0, 0.6); }
-
-footer {
-  width: 100%;
-  text-align: center;
-  background: rgba(0, 0, 0, 0.6);
-  padding: 20px;
-  line-height: 25px;
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 13px; }
-
 article {
   width: 100%;
   min-width: 1200px;
@@ -474,5 +299,66 @@ article {
         margin: 30px 0 0 0; }
       article .right section ul.searcher-list li {
         margin: 15px 0; }
+article .right section.goverment h3 {
+  font-size: 21px;
+  font-weight: normal;
+  line-height: 50px;
+  border-bottom: 1px solid #379e6b; }
+
+article .right section.goverment span {
+  color: #ca3f00;
+  font-size: 20px;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 20px;
+  margin-bottom: 10px; }
+
+article .right section.goverment ul li {
+  margin-top: 8px;
+  color: #264e65; }
+
+article .right section.principal span {
+  color: #ca3f00;
+  font-size: 20px;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 20px;
+  margin-bottom: 10px; }
+
+article .right section.principal ul li {
+  margin-top: 8px;
+  color: #264e65; }
+
+article .right section.staff .item {
+  margin-top: 30px; }
+  article .right section.staff .item li {
+    display: inline-block;
+    text-align: center;
+    width: 20%;
+    height: 100px;
+    background: #8282d6;
+    color: white;
+    box-sizing: border-box;
+    padding-top: 40px;
+    border-radius: 5px;
+    box-shadow: 3.8px 1px 1px darkgrey; }
+    article .right section.staff .item li span {
+      display: inline-block; }
+    article .right section.staff .item li:hover span {
+      animation: fontUp .9s linear; }
+
+@keyframes fontUp {
+  from {
+    transform: translateY(60px);
+    opacity: 0; }
+  to {
+    transform: translateY(0px);
+    opacity: 1; } }
+  article .right section.staff .item .iconfont {
+    display: inline-block;
+    font-size: 35px;
+    vertical-align: top;
+    color: #379d6b;
+    margin-top: 36px; }
 
 /*# sourceMappingURL=government.css.map*/
