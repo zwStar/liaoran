@@ -7,7 +7,7 @@ webpackJsonp([0],{
 
 /***/ }),
 
-/***/ 22:
+/***/ 23:
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(2);
@@ -15,19 +15,19 @@ __webpack_require__(3);
 __webpack_require__(1);
 __webpack_require__(4);
 
-__webpack_require__(23);
 __webpack_require__(24);
+__webpack_require__(25);
 
 /***/ }),
 
-/***/ 23:
+/***/ 24:
 /***/ (function(module, exports) {
 
 
 
 /***/ }),
 
-/***/ 24:
+/***/ 25:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
@@ -77,9 +77,7 @@ __webpack_require__(24);
                     j = i;
                     return j;
                 }
-                if (this.content[0].scrollHeight <= this.scrollTop() + this.content.height() + 100) {
-                    console.log("1111111");
-                }
+                if (this.content[0].scrollHeight <= this.scrollTop() + this.content.height() + 100) {}
             }
             return j;
         }
@@ -161,5 +159,5 @@ $(function () {
 
 /***/ })
 
-},[22]);
+},[23]);
 //# sourceMappingURL=community.js.map

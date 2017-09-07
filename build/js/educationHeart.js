@@ -1,4 +1,4 @@
-webpackJsonp([6],{
+webpackJsonp([7],{
 
 /***/ 1:
 /***/ (function(module, exports) {
@@ -7,7 +7,7 @@ webpackJsonp([6],{
 
 /***/ }),
 
-/***/ 25:
+/***/ 26:
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(2);
@@ -60,9 +60,7 @@ __webpack_require__(4);
                     j = i;
                     return j;
                 }
-                if (this.content[0].scrollHeight <= this.scrollTop() + this.content.height() + 100) {
-                    console.log("1111111");
-                }
+                if (this.content[0].scrollHeight <= this.scrollTop() + this.content.height() + 100) {}
             }
             return j;
         }
@@ -144,5 +142,5 @@ $(function () {
 
 /***/ })
 
-},[25]);
+},[26]);
 //# sourceMappingURL=educationHeart.js.map

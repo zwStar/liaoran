@@ -40,7 +40,6 @@
                     return j;
                 }
                 if(this.content[0].scrollHeight <= this.scrollTop() + this.content.height() + 100){
-                    console.log("1111111");
                 }
             }
             return j;

@@ -6,6 +6,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin'); //每个html文件自动引入css js 文件
 
+var proxypath = "http://123.207.34.129:3000"
 module.exports = {
     entry: {
         index: "./entry/index.js",
@@ -16,8 +17,8 @@ module.exports = {
         evaluation: "./entry/evaluation.js",
         government: "./entry/government.js",
         community: "./entry/community.js",
-        educationHeart:"./entry/educationHeart.js",
-        enterprisePsychological:"./entry/enterprisePsychological.js"
+        educationHeart: "./entry/educationHeart.js",
+        enterprisePsychological: "./entry/enterprisePsychological.js"
     },
     output: {
         path: path.resolve("./build"), //输出目录的配置，模板、样式、脚本、图片等资源的路径配置都相对于它
@@ -26,6 +27,18 @@ module.exports = {
         chunkFilename: 'js/[name].chunk.js'   //chunk生成的配置
     },
     devtool: "source-map",
+    devServer: {
+        proxy:{
+            '/user':{
+                target: proxypath,
+                secure:false
+            },
+            '/articles':{
+                target: proxypath,
+                secure:false
+            },
+        }
+    },
     resolve: {
         alias: {
             'view': path.resolve(__dirname, 'view')
@@ -68,7 +81,7 @@ module.exports = {
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendors', // 将公共模块提取，生成名为`vendors`的chunk
 
-            chunks: ['index', 'aboutUs', 'articles', 'article', 'companyEnterprise', 'evaluation', 'community','educationHeart','enterprisePsychological'], //提取哪些模块共有的部分
+            chunks: ['index', 'aboutUs', 'articles', 'article', 'companyEnterprise', 'evaluation', 'community', 'educationHeart', 'enterprisePsychological'], //提取哪些模块共有的部分
             // minChunks: 7 // 提取至少3个模块共有的部分
         }),
         //主页
