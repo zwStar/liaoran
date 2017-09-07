@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'iconfont';  /* project id 372423 */
-  src: url('http://at.alicdn.com/t/font_372423_z5pzgkzucfqg2e29.eot');
-  src: url('http://at.alicdn.com/t/font_372423_z5pzgkzucfqg2e29.eot?#iefix') format('embedded-opentype'),
-  url('http://at.alicdn.com/t/font_372423_z5pzgkzucfqg2e29.woff') format('woff'),
-  url('http://at.alicdn.com/t/font_372423_z5pzgkzucfqg2e29.ttf') format('truetype'),
-  url('http://at.alicdn.com/t/font_372423_z5pzgkzucfqg2e29.svg#iconfont') format('svg');
+  src: url('http://at.alicdn.com/t/font_372423_w4qj6p8gtj5x9a4i.eot');
+  src: url('http://at.alicdn.com/t/font_372423_w4qj6p8gtj5x9a4i.eot?#iefix') format('embedded-opentype'),
+  url('http://at.alicdn.com/t/font_372423_w4qj6p8gtj5x9a4i.woff') format('woff'),
+  url('http://at.alicdn.com/t/font_372423_w4qj6p8gtj5x9a4i.ttf') format('truetype'),
+  url('http://at.alicdn.com/t/font_372423_w4qj6p8gtj5x9a4i.svg#iconfont') format('svg');
 }
 //清除浮动
 html,body{
@@ -41,7 +41,7 @@ ul,li{
 }
 /*****导航栏更改时需要修改此处******/
 $pullDownListItem:41px;         /* 导航栏下拉列表每一项高度 */
-$liCount:(1:0,2:4,3:4,4:2,5:7,6:0); /* 键为导航的索引，值为该项的下拉列表有几项 */
+$liCount:(1:0,2:4,3:4,4:2,5:8,6:0); /* 键为导航的索引，值为该项的下拉列表有几项 */
 
 
 @mixin height($count){
@@ -133,7 +133,7 @@ header{
           }
         }
       }
-      .item:nth-child(5),.item:nth-child(4){		/*某两个导航的宽度*/
+      .item:nth-child(4){		/*某两个导航的宽度*/
         .pull-down-list{
           width: 155px;
         }
