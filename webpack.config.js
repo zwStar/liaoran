@@ -17,8 +17,9 @@ module.exports = {
         evaluation: "./entry/evaluation.js",
         government: "./entry/government.js",
         community: "./entry/community.js",
-        educationHeart: "./entry/educationHeart.js",
-        enterprisePsychological: "./entry/enterprisePsychological.js"
+        educationHeart:"./entry/educationHeart.js",
+        enterprisePsychological:"./entry/enterprisePsychological.js",
+        civilAviation:"./entry/civilAviation.js"        //民用航空页面
     },
     output: {
         path: path.resolve("./build"), //输出目录的配置，模板、样式、脚本、图片等资源的路径配置都相对于它
@@ -81,7 +82,7 @@ module.exports = {
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendors', // 将公共模块提取，生成名为`vendors`的chunk
 
-            chunks: ['index', 'aboutUs', 'articles', 'article', 'companyEnterprise', 'evaluation', 'community', 'educationHeart', 'enterprisePsychological'], //提取哪些模块共有的部分
+            chunks: ['index', 'aboutUs', 'articles', 'article', 'companyEnterprise', 'evaluation', 'community','educationHeart','enterprisePsychological','civilAviation'], //提取哪些模块共有的部分
             // minChunks: 7 // 提取至少3个模块共有的部分
         }),
         //主页
@@ -189,6 +190,17 @@ module.exports = {
             template: path.resolve(__dirname, 'view/enterprisePsychological/enterprisePsychological.html'),
             inject: 'body',
             chunks: ['vendors', 'enterprisePsychological'],   //需要引入的chunk，不配置就会引入所有页面的资源
+            minify: {
+                removeComments: false,
+                collapseWhitespace: false
+            }
+        }),
+        //民用航空
+        new HtmlWebpackPlugin({
+            filename: './civilAviation.html',
+            template: path.resolve(__dirname, 'view/civilAviation/civilAviation.html'),
+            inject: 'body',
+            chunks: ['vendors', 'civilAviation'],   //需要引入的chunk，不配置就会引入所有页面的资源
             minify: {
                 removeComments: false,
                 collapseWhitespace: false

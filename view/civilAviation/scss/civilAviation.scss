@@ -1,0 +1,22 @@
+.right{
+    .flightCrew,.flightAttendants{
+        ul{
+            span{
+                color: #ca3f00;
+                font-size: 19px;
+                font-weight: bold;
+                display: inline-block;
+                margin-top: 30px;
+            }
+            li{
+                margin-top: 20px;
+                color: slategrey;
+                .iconfont{
+                    margin-right: 8px;
+                    color: #f9e0d2;
+                    font-size: 22px;
+                }
+            }
+        }
+    }
+}

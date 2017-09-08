@@ -1,4 +1,4 @@
-webpackJsonp([6],[
+webpackJsonp([7],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -10,8 +10,8 @@ webpackJsonp([6],[
 /**
  * Created by admin on 2017/8/16.
  */
-__webpack_require__(2);
 __webpack_require__(3);
+__webpack_require__(4);
 __webpack_require__(6);
 __webpack_require__(7);
 

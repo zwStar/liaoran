@@ -104,6 +104,19 @@ article {
         }
       }
     }
+    .classicCourse{
+      .Course{
+        li{
+          margin-top: 30px;
+          color: slategrey;
+          .iconfont{
+             margin-right: 8px;
+             color: #f9e0d2;
+             font-size: 22px;
+          }
+        }
+      }
+    }
     section {
 
       .introduce{

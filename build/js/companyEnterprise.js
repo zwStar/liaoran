@@ -13,10 +13,10 @@ webpackJsonp([4],{
 /**
  * Created by admin on 2017/8/16.
  */
-__webpack_require__(2);
 __webpack_require__(3);
-__webpack_require__(1);
 __webpack_require__(4);
+__webpack_require__(1);
+__webpack_require__(2);
 
 __webpack_require__(18);
 
@@ -29,7 +29,7 @@ __webpack_require__(18);
 
 /***/ }),
 
-/***/ 4:
+/***/ 2:
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(__webpack_provided_window_dot_jQuery, $) {/**
