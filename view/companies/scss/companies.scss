@@ -1,5 +1,5 @@
 article .right{
-    section.principal,section.executives{
+    section{
         span{
             color: #ca3f00;
             font-size: 20px;
@@ -17,11 +17,6 @@ article .right{
                 margin-top: 8px;
                 color: #264e65;
             }
-        }
-    }
-    section.executives{
-        .title{
-            margin: 15px 0;
         }
     }
 }
