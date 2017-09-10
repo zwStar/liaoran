@@ -22,7 +22,7 @@
             this.ListClick();               //绑定左侧列表点击事件
             this.scrollEvent();             //滚动条滚动事件
             this.wheelSlide();              //滑轮滚动事件
-            this.showDownList()             //如果左边导航第一项有下拉列表则显示下拉列表
+            // this.showDownList()             //如果左边导航第一项有下拉列表则显示下拉列表
         
         },
         getAnchorArr: function () {         //获取喵点位置
@@ -63,7 +63,7 @@
                 }else{
                     
                     var downList  = $(this).find(".downList");
-                    _this.showDownList(downList);
+                    // _this.showDownList(downList);
                 }
 
             })
@@ -102,17 +102,16 @@
                 _this.scrollTo(position);
             })
         },
-        showDownList:function(downList){
-            downList = downList || $(".navList li:eq(0) .downList");
-            if(downList){
-                $(downList).css({
-                    'height':downList.children().length * 30 + 'px',
-                    'opacity':1,
-                    'margin-top':'5px'
-                })
-            }
-            
-        }
+        // showDownList:function(downList){
+        //     downList = downList || $(".navList li:eq(0) .downList");
+        //     if(downList){
+        //         $(downList).css({
+        //             'height':downList.children().length * 30 + 'px',
+        //             'opacity':1,
+        //             'margin-top':'5px'
+        //         })
+        //     }
+        // }
     }
 
 

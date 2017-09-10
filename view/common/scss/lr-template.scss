@@ -49,8 +49,8 @@ article {
           }
           .downList{
             overflow: hidden;
-            height: 0;
-            opacity: 0;
+            height: 120px;
+            opacity: 1;
             transition: height .5s ease-in , opacity .5s ease-in;
             line-height: 23px;
             font-size: 14px;
