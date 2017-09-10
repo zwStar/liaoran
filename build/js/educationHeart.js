@@ -1,4 +1,4 @@
-webpackJsonp([6],{
+webpackJsonp([8],{
 
 /***/ 1:
 /***/ (function(module, exports) {
@@ -7,17 +7,7 @@ webpackJsonp([6],{
 
 /***/ }),
 
-/***/ 25:
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(2);
-__webpack_require__(3);
-__webpack_require__(1);
-__webpack_require__(4);
-
-/***/ }),
-
-/***/ 4:
+/***/ 2:
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(__webpack_provided_window_dot_jQuery, $) {/**
@@ -60,9 +50,7 @@ __webpack_require__(4);
                     j = i;
                     return j;
                 }
-                if (this.content[0].scrollHeight <= this.scrollTop() + this.content.height() + 100) {
-                    console.log("1111111");
-                }
+                if (this.content[0].scrollHeight <= this.scrollTop() + this.content.height() + 100) {}
             }
             return j;
         }
@@ -142,7 +130,17 @@ $(function () {
 });
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0), __webpack_require__(0)))
 
+/***/ }),
+
+/***/ 26:
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(3);
+__webpack_require__(4);
+__webpack_require__(1);
+__webpack_require__(2);
+
 /***/ })
 
-},[25]);
+},[26]);
 //# sourceMappingURL=educationHeart.js.map

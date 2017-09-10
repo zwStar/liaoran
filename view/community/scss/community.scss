@@ -1,9 +1,41 @@
 .community{
     .content-wrapper{
         section{
+            .item{
+                margin-top: 10px;
+                div:nth-child(1){
+                    display: inline-block;
+                    width: 71px;
+                    height: 45px;
+                    border-radius: 7px 0 0 7px;
+                    background: #ca2574;
+                }
+                div:nth-child(2){
+                    display: inline-block;
+                    vertical-align: top;
+                    background: rgba(0, 98, 177, 0.75);
+                    height: 45px;
+                    border-radius: 0 7px 7px 0;
+                    color: white;
+                    width: 140px;
+                    font-size: 17px;
+                    text-align: center;
+                    box-sizing: border-box;
+                    padding-top: 7px;
+                    font-weight: bolder;
+                }
+            }
             p{
-                font-size: 18px;
+                font-size: 15px;
                 line-height: 38px;
+                img{
+                    float: right;
+                }
+            }
+            img{
+                width: 33.3%;
+                height: 160px;
+                margin-top: 30px;
             }
             .iconfont{
                 margin-right: 8px;
@@ -11,23 +43,9 @@
                 font-size: 22px;
             }
             ul{
+                margin-top: 20px;
                 li{
-                    margin-top: 20px;
-                    color: slategrey;
-                    ul{
-                        margin-left: 10px;
-                    }
-                }
-            }
-        }
-        .catalogueOfClassics{
-            ul{
-                ul{
-                    margin-top: 40px;
-                    span{
-                        color: #ca3f00;
-                        font-size: 20px;
-                    }   
+                    margin-top: 10px;
                 }
             }
         }

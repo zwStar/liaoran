@@ -37,7 +37,7 @@
         },
         getCount: function () { //获取总共有多少文章
             var _this = this;
-            var url = 'http://123.207.34.129:3000/articles/lrArticle/count'
+            var url = '/articles/lrArticle/count'
             var type = "GET";
             var data = {type: _this.type};  //文章类型
             var callback = function (results) {
@@ -73,7 +73,7 @@
         },
         getArticle: function () {               //获取文章
             var _this = this;
-            var url = 'http://123.207.34.129:3000/articles/lrArticle/get';
+            var url = '/articles/lrArticle/get';
             var type = "GET";
             var data = {type: _this.type, count: _this.PageNum, index: _this.index};
             var callback = function (results) {

@@ -13,23 +13,24 @@ webpackJsonp([1],[
 /* 6 */,
 /* 7 */,
 /* 8 */,
-/* 9 */
+/* 9 */,
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
  * Created by admin on 2017/8/16.
  */
-__webpack_require__(2);
 __webpack_require__(3);
+__webpack_require__(4);
 __webpack_require__(1);
 
-__webpack_require__(10);
-
 __webpack_require__(11);
+
 __webpack_require__(12);
+__webpack_require__(13);
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports) {
 
 /**
@@ -278,7 +279,7 @@ __webpack_require__(12);
 })(window);
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(__webpack_provided_window_dot_jQuery) {(function ($) {
@@ -311,7 +312,7 @@ __webpack_require__(12);
         getCount: function () {
             //获取总共有多少文章
             var _this = this;
-            var url = 'http://123.207.34.129:3000/articles/lrArticle/count';
+            var url = '/articles/lrArticle/count';
             var type = "GET";
             var data = { type: _this.type }; //文章类型
             var callback = function (results) {
@@ -348,7 +349,7 @@ __webpack_require__(12);
         getArticle: function () {
             //获取文章
             var _this = this;
-            var url = 'http://123.207.34.129:3000/articles/lrArticle/get';
+            var url = '/articles/lrArticle/get';
             var type = "GET";
             var data = { type: _this.type, count: _this.PageNum, index: _this.index };
             var callback = function (results) {
@@ -388,11 +389,11 @@ __webpack_require__(12);
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ })
-],[9]);
+],[10]);
 //# sourceMappingURL=articles.js.map

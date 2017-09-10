@@ -6,6 +6,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin'); //每个html文件自动引入css js 文件
 
+var proxypath = "http://123.207.34.129:3000"
 module.exports = {
     entry: {
         index: "./entry/index.js",
@@ -27,6 +28,18 @@ module.exports = {
         chunkFilename: 'js/[name].chunk.js'   //chunk生成的配置
     },
     devtool: "source-map",
+    devServer: {
+        proxy:{
+            '/user':{
+                target: proxypath,
+                secure:false
+            },
+            '/articles':{
+                target: proxypath,
+                secure:false
+            },
+        }
+    },
     resolve: {
         alias: {
             'view': path.resolve(__dirname, 'view')

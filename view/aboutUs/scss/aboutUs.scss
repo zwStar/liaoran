@@ -3,14 +3,18 @@
     background: #ebedf3;
     .content{
       position: absolute;
-      top: 30%;
+      top: 39%;
       left: 50%;
-      width: 80%;
+      width: 90%;
       transform: translateY(-50%);
       color: #6d3d3d;
       opacity: 0;
       animation: showContent 1.5s linear;
       animation-fill-mode: forwards;
+      p{
+        text-indent: 45px;
+        margin-bottom:30px;
+      }
     }
     @keyframes showContent{
       0%{
