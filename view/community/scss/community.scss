@@ -1,6 +1,7 @@
 .community{
     .content-wrapper{
         section{
+            margin-bottom: 30px;
             .item{
                 margin-top: 10px;
                 div:nth-child(1){
@@ -46,6 +47,8 @@
                 margin-top: 20px;
                 li{
                     margin-top: 10px;
+                    font-size: 15px;
+                    line-height: 38px;
                 }
             }
         }

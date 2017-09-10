@@ -1,21 +1,49 @@
 article .right{
     section{
-        span{
-            color: #ca3f00;
-            font-size: 20px;
-            font-weight: bold;
-            display: inline-block;
-            margin-top: 20px;
-            margin-bottom: 10px;
+        .item{
+            margin-top: 30px;
+            div:nth-child(1){
+                display: inline-block;
+                width: 71px;
+                height: 45px;
+                border-radius: 7px 0 0 7px;
+                background: #ca2574;
+            }
+            div:nth-child(2){
+                display: inline-block;
+                vertical-align: top;
+                background: rgba(0, 98, 177, 0.75);
+                height: 45px;
+                border-radius: 0 7px 7px 0;
+                color: white;
+                width: 140px;
+                font-size: 17px;
+                text-align: center;
+                box-sizing: border-box;
+                padding-top: 7px;
+                font-weight: bolder;
+            }
+        }
+        img{
+            width: 33.3%;
+            height: 160px;
+            margin-top: 30px;
         }
         p{
             margin-top: 20px;
-            line-height: 28px;
+            font-size: 15px;
+            line-height: 38px;
+        }
+        .iconfont{
+            margin-right: 8px;
+            color: #f9e0d2;
+            font-size: 22px;
         }
         ul{
             li{
                 margin-top: 8px;
-                color: #264e65;
+                font-size: 15px;
+                line-height: 38px;
             }
         }
     }
