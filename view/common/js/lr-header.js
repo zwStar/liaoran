@@ -87,7 +87,7 @@
     '				 		</a>',
     '				 	</li><!-- ',
     '				 --><li>',
-    '				 		<a href="./enterprisePsychological.html">',
+    '				 		<a href="./companies.html">',
     '				 			公司企业',
     '				 			<div class="border"></div>',
     '				 		</a>',

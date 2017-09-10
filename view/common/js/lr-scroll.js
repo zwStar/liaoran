@@ -106,7 +106,7 @@
             downList = downList || $(".navList li:eq(0) .downList");
             if(downList){
                 $(downList).css({
-                    'height':downList.children().length * 23 + 'px',
+                    'height':downList.children().length * 30 + 'px',
                     'opacity':1,
                     'margin-top':'5px'
                 })

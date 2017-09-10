@@ -6,12 +6,34 @@
 .community{
     .content-wrapper{
         section{
-            title{
-
-            }
             p{
-                font-size: 14px;
-                line-height: 23px;
+                font-size: 18px;
+                line-height: 38px;
+            }
+            .iconfont{
+                margin-right: 8px;
+                color: #f9e0d2;
+                font-size: 22px;
+            }
+            ul{
+                li{
+                    margin-top: 20px;
+                    color: slategrey;
+                    ul{
+                        margin-left: 10px;
+                    }
+                }
+            }
+        }
+        .catalogueOfClassics{
+            ul{
+                ul{
+                    margin-top: 40px;
+                    span{
+                        color: #ca3f00;
+                        font-size: 20px;
+                    }   
+                }
             }
         }
     }
