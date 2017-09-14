@@ -9906,6 +9906,75 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 /***/ 2:
 /***/ (function(module, exports, __webpack_require__) {
 
+/* WEBPACK VAR INJECTION */(function(__webpack_provided_window_dot_jQuery) {/**
+ * Created by Administrator on 2017/7/28.
+ */
+(function ($) {
+
+    var header = ['<header class="relativeHeader">', '    <div class="logo">', '        <span></span>', '    </div>', '	<nav>', '		<ul>', '			<li class="item"><a href="./index.html"><span>首页</span></a></li><!-- ', '		 --><li class="item">', '				<span>心理学苑</span>', '				<ul class="pull-down-list">', '					<li>', '						<a href="./articles.html?type=theory">', '							理论精华', '							<div class="border"></div>', '						</a>', '					</li><!-- ', '				 --><li>', '				 		<a href="./articles.html?type=experiment">', '				 			鲜活实验', '				 			<div class="border"></div>', '				 		</a>', '				 	</li><!-- ', '				 --><li>', '				 		<a href="./articles.html?type=theatre">', '				 			心理剧场', '				 			<div class="border"></div>', '				 		</a>', '				 	</li><!-- ', '				 --><li>', '				 		<a href="./articles.html?type=notes">', '				 			百科美文', '				 			<div class="border"></div>', '				 		</a>', '				 	</li>', '				</ul>', '			</li><!-- ', '		 --><li class="item">', '				<span>心观天下</span>', '				<ul class="pull-down-list">', '					<li>', '						<a href="">', '							它山之石', '							<div class="border"></div>', '						</a>', '					</li><!-- ', '				 --><li>', '				 		<a href="">', '				 			时代脉搏', '				 			<div class="border"></div>', '				 		</a>', '				 	</li><!-- ', '				 --><li>', '				 		<a href="">', '				 			大写的人', '				 			<div class="border"></div>', '				 		</a>', '				 	</li><!-- ', '				 --><li>', '				 		<a href="">', '				 			警世通言', '				 			<div class="border"></div>', '				 		</a>', '				 	</li>', '				</ul>', '			</li><!-- ', '		 --><li class="item">', '				<span>会心一笑</span>', '			</li><!--', '		 --><li class="item">', '				<span>商务合作</span>', '				<ul class="pull-down-list">', '					<li>', '				 		<a href="./community.html">', '				 			家庭社区', '				 			<div class="border"></div>', '				 		</a>', '				 	</li><!-- ', '				 --><li>', '				 		<a href="./companies.html">', '				 			公司企业', '				 			<div class="border"></div>', '				 		</a>', '				 	</li><!-- ', '				 --><li>', '				 		<a href="./government.html">', '				 			部队官兵', '				 			<div class="border"></div>', '				 		</a>', '				 	</li><!-- ', '				 --><li>', '				 		<a href="./civilAviation.html">', '				 			民用航空', '				 			<div class="border"></div>', '				 		</a>', '				 	</li>', '				</ul>', '			</li> ', '           <li class="item"><a href="./aboutUs.html"><span>关于我们</span></a></li>', '		</ul>', '	</nav>', '</header>'].join("");
+    var footer = ['<footer>', '    <div class="name">广东省了然文化传播有限公司</div>', '    <div class="address">东莞市松山湖大学路瑞鹰国际科技创新园8栋201</div>', '</footer>'].join("");
+
+    $("body").prepend(header);
+    $("body>script").length > 0 ? $('body>script').eq(0).before(footer) : $('body').append(footer);
+
+    var href = window.location.href;
+    var index = href.lastIndexOf("/");
+
+    var header = $("header");
+
+    switch (href.slice(index + 1, href.indexOf('.'))) {
+        case 'index':
+            header.removeClass('relativeHeader');
+            break;
+        case 'articles':
+            $("header .item:eq(1) span").addClass("active");
+            break;
+        case 'article':
+            $("header .item:eq(1) span").addClass("active");
+            break;
+        case 'aboutUs':
+            $("header .item:eq(5) span").addClass("active");
+            break;
+        default:
+
+            break;
+    }
+})(__webpack_provided_window_dot_jQuery);
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+
+/***/ 21:
+/***/ (function(module, exports, __webpack_require__) {
+
+/**
+ * Created by admin on 2017/8/19.
+ */
+__webpack_require__(2);
+__webpack_require__(3);
+__webpack_require__(1);
+__webpack_require__(4);
+__webpack_require__(22);
+
+/***/ }),
+
+/***/ 22:
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ 3:
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ 4:
+/***/ (function(module, exports, __webpack_require__) {
+
 /* WEBPACK VAR INJECTION */(function(__webpack_provided_window_dot_jQuery, $) {/**
  * Created by admin on 2017/8/16.
  */
@@ -9930,7 +9999,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
             this.ListClick(); //绑定左侧列表点击事件
             this.scrollEvent(); //滚动条滚动事件
             this.wheelSlide(); //滑轮滚动事件
-            this.showDownList(); //如果左边导航第一项有下拉列表则显示下拉列表
+            // this.showDownList()             //如果左边导航第一项有下拉列表则显示下拉列表
         },
         getAnchorArr: function () {
             //获取喵点位置
@@ -9969,7 +10038,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
                 } else {
 
                     var downList = $(this).find(".downList");
-                    _this.showDownList(downList);
+                    // _this.showDownList(downList);
                 }
             });
         },
@@ -10007,17 +10076,17 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
                 position = (oev.wheelDelta ? -oev.wheelDelta / 120 : oev.detail / 3) * wheelrate + this.scrollTop;
                 _this.scrollTo(position);
             });
-        },
-        showDownList: function (downList) {
-            downList = downList || $(".navList li:eq(0) .downList");
-            if (downList) {
-                $(downList).css({
-                    'height': downList.children().length * 23 + 'px',
-                    'opacity': 1,
-                    'margin-top': '5px'
-                });
-            }
         }
+        // showDownList:function(downList){
+        //     downList = downList || $(".navList li:eq(0) .downList");
+        //     if(downList){
+        //         $(downList).css({
+        //             'height':downList.children().length * 30 + 'px',
+        //             'opacity':1,
+        //             'margin-top':'5px'
+        //         })
+        //     }
+        // }
     };
 })(__webpack_provided_window_dot_jQuery, "ScrollAuto");
 
@@ -10025,75 +10094,6 @@ $(function () {
     $(".content-wrapper").ScrollAuto();
 });
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0), __webpack_require__(0)))
-
-/***/ }),
-
-/***/ 21:
-/***/ (function(module, exports, __webpack_require__) {
-
-/**
- * Created by admin on 2017/8/19.
- */
-__webpack_require__(3);
-__webpack_require__(4);
-__webpack_require__(1);
-__webpack_require__(2);
-__webpack_require__(22);
-
-/***/ }),
-
-/***/ 22:
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ 3:
-/***/ (function(module, exports, __webpack_require__) {
-
-/* WEBPACK VAR INJECTION */(function(__webpack_provided_window_dot_jQuery) {/**
- * Created by Administrator on 2017/7/28.
- */
-(function ($) {
-
-    var header = ['<header class="relativeHeader">', '    <div class="logo">', '        <span></span>', '    </div>', '	<nav>', '		<ul>', '			<li class="item"><a href="./index.html"><span>首页</span></a></li><!-- ', '		 --><li class="item">', '				<span>心理学苑</span>', '				<ul class="pull-down-list">', '					<li>', '						<a href="./articles.html?type=theory">', '							理论精华', '							<div class="border"></div>', '						</a>', '					</li><!-- ', '				 --><li>', '				 		<a href="./articles.html?type=experiment">', '				 			经典实验', '				 			<div class="border"></div>', '				 		</a>', '				 	</li><!-- ', '				 --><li>', '				 		<a href="./articles.html?type=theatre">', '				 			心理剧场', '				 			<div class="border"></div>', '				 		</a>', '				 	</li><!-- ', '				 --><li>', '				 		<a href="./articles.html?type=notes">', '				 			百科美文', '				 			<div class="border"></div>', '				 		</a>', '				 	</li>', '				</ul>', '			</li><!-- ', '		 --><li class="item">', '				<span>心观天下</span>', '				<ul class="pull-down-list">', '					<li>', '						<a href="">', '							它山之石', '							<div class="border"></div>', '						</a>', '					</li><!-- ', '				 --><li>', '				 		<a href="">', '				 			时代脉搏', '				 			<div class="border"></div>', '				 		</a>', '				 	</li><!-- ', '				 --><li>', '				 		<a href="">', '				 			大写的人', '				 			<div class="border"></div>', '				 		</a>', '				 	</li><!-- ', '				 --><li>', '				 		<a href="">', '				 			警世通言', '				 			<div class="border"></div>', '				 		</a>', '				 	</li>', '				</ul>', '			</li><!-- ', '		 --><li class="item">', '				<span>心理协会</span>', '				<ul class="pull-down-list">', '					<li>', '						<a href="">', '							松(山)湖心理协会', '							<div class="border"></div>', '						</a>', '					</li><!-- ', '				 --><li>', '				 		<a href="">', '				 			松(山)湖心理沙龙', '				 			<div class="border"></div>', '				 		</a>', '				 	</li>', '				</ul>', '			</li><!--', '		 --><li class="item">', '				<span>商务合作</span>', '				<ul class="pull-down-list">', '					<li>', '						<a href="./evaluation.html">', '							人力资源', '							<div class="border"></div>', '						</a>', '					</li><!-- ', '				 --><li>', '				 		<a href="./community.html">', '				 			家庭社区', '				 			<div class="border"></div>', '				 		</a>', '				 	</li><!-- ', '				 --><li>', '				 		<a href="./enterprisePsychological.html">', '				 			公司企业', '				 			<div class="border"></div>', '				 		</a>', '				 	</li><!-- ', '				 --><li>', '				 		<a href="./educationHeart.html">', '				 			政府机关', '				 			<div class="border"></div>', '				 		</a>', '				 	</li><!-- ', '				 --><li>', '				 		<a href="./government.html">', '				 			教师学生', '				 			<div class="border"></div>', '				 		</a>', '				 	</li><!-- ', '				 --><li>', '				 		<a href="./government.html">', '				 			公安干警', '				 			<div class="border"></div>', '				 		</a>', '				 	</li><!-- ', '				 --><li>', '				 		<a href="./government.html">', '				 			部队官兵', '				 			<div class="border"></div>', '				 		</a>', '				 	</li><!-- ', '				 --><li>', '				 		<a href="./civilAviation.html">', '				 			民用航空', '				 			<div class="border"></div>', '				 		</a>', '				 	</li>', '				</ul>', '			</li> ', '           <li class="item"><a href="./aboutUs.html"><span>关于我们</span></a></li>', '		</ul>', '	</nav>', '</header>'].join("");
-    var footer = ['<footer>', '    <div class="name">广东省了然文化传播有限公司</div>', '    <div class="address">东莞市松山湖大学路瑞鹰国际科技创新园8栋201</div>', '</footer>'].join("");
-
-    $("body").prepend(header);
-    $("body>script").length > 0 ? $('body>script').eq(0).before(footer) : $('body').append(footer);
-
-    var href = window.location.href;
-    var index = href.lastIndexOf("/");
-
-    var header = $("header");
-
-    switch (href.slice(index + 1, href.indexOf('.'))) {
-        case 'index':
-            header.removeClass('relativeHeader');
-            break;
-        case 'articles':
-            $("header .item:eq(1) span").addClass("active");
-            break;
-        case 'article':
-            $("header .item:eq(1) span").addClass("active");
-            break;
-        case 'aboutUs':
-            $("header .item:eq(5) span").addClass("active");
-            break;
-        default:
-
-            break;
-    }
-})(__webpack_provided_window_dot_jQuery);
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
-
-/***/ }),
-
-/***/ 4:
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
 
 /***/ })
 

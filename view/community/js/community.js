@@ -13,7 +13,7 @@
 
     var __PROTO__ = {
         init: function () {
-            this.anchor = $(".anchor");           //喵点
+            this.anchor = $(".anchor-two");           //喵点
             this.leftList = $(".list-tag");   //左侧列表
 
             this.content = $(".content-wrapper");       //右侧容器
@@ -23,6 +23,7 @@
             this.ListClick();               //绑定左侧列表点击事件
             this.scrollEvent();             //滚动条滚动事件
             this.wheelSlide();              //滑轮滚动事件
+            this.trainTop = $(".trains").position().top;
             // this.showDownList()             //如果左边导航第一项有下拉列表则显示下拉列表
         },
         getAnchorArr: function () {         //获取喵点位置
@@ -49,7 +50,7 @@
             var _this = this;
             $(".heart-leader").on("click",function(){
                 $(".heart-leader").addClass("active").siblings().removeClass("active");
-                _this.content.scrollTop($(".trains").position().top);
+                _this.content.scrollTop(_this.trainTop);
             })
             _this.leftList.on("click", function () {
                 $(this).parent().parent().addClass("active").siblings().removeClass("active");        //为点击增加active 并且remove其它li的active

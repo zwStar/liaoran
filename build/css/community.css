@@ -37,13 +37,17 @@ article {
           transform: rotate(0deg); }
         article .left .navList ul li .downList {
           overflow: hidden;
-          height: 0;
-          opacity: 0;
+          height: 120px;
+          opacity: 1;
           transition: height .5s ease-in , opacity .5s ease-in;
           line-height: 23px;
           font-size: 14px;
           margin-left: 16px;
           color: black; }
+          article .left .navList ul li .downList div {
+            color: #65301c;
+            font-size: 15px;
+            margin-top: 7px; }
       article .left .navList ul li.active {
         color: #379d6b; }
         article .left .navList ul li.active .iconfont {
@@ -101,8 +105,47 @@ article {
         margin: 30px 0 0 0; }
       article .right section ul.searcher-list li {
         margin: 15px 0; }
-.community .content-wrapper section p {
-  font-size: 14px;
-  line-height: 23px; }
+.community .content-wrapper section {
+  margin-bottom: 30px; }
+  .community .content-wrapper section .item {
+    margin-top: 10px; }
+    .community .content-wrapper section .item div:nth-child(1) {
+      display: inline-block;
+      width: 71px;
+      height: 45px;
+      border-radius: 7px 0 0 7px;
+      background: #ca2574; }
+    .community .content-wrapper section .item div:nth-child(2) {
+      display: inline-block;
+      vertical-align: top;
+      background: rgba(0, 98, 177, 0.75);
+      height: 45px;
+      border-radius: 0 7px 7px 0;
+      color: white;
+      width: 140px;
+      font-size: 17px;
+      text-align: center;
+      box-sizing: border-box;
+      padding-top: 7px;
+      font-weight: bolder; }
+  .community .content-wrapper section p {
+    font-size: 15px;
+    line-height: 38px; }
+    .community .content-wrapper section p img {
+      float: right; }
+  .community .content-wrapper section img {
+    width: 33.3%;
+    height: 160px;
+    margin-top: 30px; }
+  .community .content-wrapper section .iconfont {
+    margin-right: 8px;
+    color: #f9e0d2;
+    font-size: 22px; }
+  .community .content-wrapper section ul {
+    margin-top: 20px; }
+    .community .content-wrapper section ul li {
+      margin-top: 10px;
+      font-size: 15px;
+      line-height: 38px; }
 
 /*# sourceMappingURL=community.css.map*/

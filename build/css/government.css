@@ -2,8 +2,8 @@
 @font-face {
   font-family: 'iconfont';
   /* project id 372423 */
-  src: url("http://at.alicdn.com/t/font_372423_w4qj6p8gtj5x9a4i.eot");
-  src: url("http://at.alicdn.com/t/font_372423_w4qj6p8gtj5x9a4i.eot?#iefix") format("embedded-opentype"), url("http://at.alicdn.com/t/font_372423_w4qj6p8gtj5x9a4i.woff") format("woff"), url("http://at.alicdn.com/t/font_372423_w4qj6p8gtj5x9a4i.ttf") format("truetype"), url("http://at.alicdn.com/t/font_372423_w4qj6p8gtj5x9a4i.svg#iconfont") format("svg"); }
+  src: url("http://at.alicdn.com/t/font_372423_m70yjkxr4kzhyqfr.eot");
+  src: url("http://at.alicdn.com/t/font_372423_m70yjkxr4kzhyqfr.eot?#iefix") format("embedded-opentype"), url("http://at.alicdn.com/t/font_372423_m70yjkxr4kzhyqfr.woff") format("woff"), url("http://at.alicdn.com/t/font_372423_m70yjkxr4kzhyqfr.ttf") format("truetype"), url("http://at.alicdn.com/t/font_372423_m70yjkxr4kzhyqfr.svg#iconfont") format("svg"); }
 
 html, body {
   width: 100%;
@@ -159,7 +159,7 @@ header {
       header nav ul .item:nth-child(5):hover {
         /*导航的高度伸缩变化动画*/ }
         header nav ul .item:nth-child(5):hover .pull-down-list {
-          height: 328px;
+          height: 164px;
           opacity: 1; }
           header nav ul .item:nth-child(5):hover .pull-down-list li {
             display: block; }
@@ -235,13 +235,17 @@ article {
           transform: rotate(0deg); }
         article .left .navList ul li .downList {
           overflow: hidden;
-          height: 0;
-          opacity: 0;
+          height: 120px;
+          opacity: 1;
           transition: height .5s ease-in , opacity .5s ease-in;
           line-height: 23px;
           font-size: 14px;
           margin-left: 16px;
           color: black; }
+          article .left .navList ul li .downList div {
+            color: #65301c;
+            font-size: 15px;
+            margin-top: 7px; }
       article .left .navList ul li.active {
         color: #379d6b; }
         article .left .navList ul li.active .iconfont {

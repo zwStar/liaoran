@@ -7,7 +7,25 @@ webpackJsonp([5],{
 
 /***/ }),
 
-/***/ 2:
+/***/ 29:
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(1);
+__webpack_require__(3);
+__webpack_require__(30);
+__webpack_require__(2);
+__webpack_require__(4);
+
+/***/ }),
+
+/***/ 30:
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ 4:
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(__webpack_provided_window_dot_jQuery, $) {/**
@@ -34,7 +52,7 @@ webpackJsonp([5],{
             this.ListClick(); //绑定左侧列表点击事件
             this.scrollEvent(); //滚动条滚动事件
             this.wheelSlide(); //滑轮滚动事件
-            this.showDownList(); //如果左边导航第一项有下拉列表则显示下拉列表
+            // this.showDownList()             //如果左边导航第一项有下拉列表则显示下拉列表
         },
         getAnchorArr: function () {
             //获取喵点位置
@@ -73,7 +91,7 @@ webpackJsonp([5],{
                 } else {
 
                     var downList = $(this).find(".downList");
-                    _this.showDownList(downList);
+                    // _this.showDownList(downList);
                 }
             });
         },
@@ -111,17 +129,17 @@ webpackJsonp([5],{
                 position = (oev.wheelDelta ? -oev.wheelDelta / 120 : oev.detail / 3) * wheelrate + this.scrollTop;
                 _this.scrollTo(position);
             });
-        },
-        showDownList: function (downList) {
-            downList = downList || $(".navList li:eq(0) .downList");
-            if (downList) {
-                $(downList).css({
-                    'height': downList.children().length * 23 + 'px',
-                    'opacity': 1,
-                    'margin-top': '5px'
-                });
-            }
         }
+        // showDownList:function(downList){
+        //     downList = downList || $(".navList li:eq(0) .downList");
+        //     if(downList){
+        //         $(downList).css({
+        //             'height':downList.children().length * 30 + 'px',
+        //             'opacity':1,
+        //             'margin-top':'5px'
+        //         })
+        //     }
+        // }
     };
 })(__webpack_provided_window_dot_jQuery, "ScrollAuto");
 
@@ -129,24 +147,6 @@ $(function () {
     $(".content-wrapper").ScrollAuto();
 });
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0), __webpack_require__(0)))
-
-/***/ }),
-
-/***/ 29:
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(1);
-__webpack_require__(4);
-__webpack_require__(30);
-__webpack_require__(3);
-__webpack_require__(2);
-
-/***/ }),
-
-/***/ 30:
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
 
 /***/ })
 
