@@ -14,7 +14,6 @@ module.exports = {
         articles: "./entry/articles.js",
         article: "./entry/article.js",
         companyEnterprise: "./entry/companyEnterprise.js",  //
-        evaluation: "./entry/evaluation.js",
         government: "./entry/government.js",
         community: "./entry/community.js",
         educationHeart:"./entry/educationHeart.js",
@@ -65,7 +64,7 @@ module.exports = {
             },
             {test: /\.html$/, loader: 'html-loader'},
             {test: /\.js$/, loader: 'babel-loader'},
-            {test: /\.(png|jpg|gif)$/, loader: 'file-loader?name=images/[name].[ext]?[hash]'},
+            {test: /\.(png|jpg|gif)$/, loader: 'file-loader?name=images/[path][name].[ext]?[hash]'},
             {test: /\.eot/, loader: 'file?prefix=font/'},
             {test: /\.woff/, loader: 'file?prefix=font/&limit=10000&mimetype=application/font-woff'},
             {test: /\.ttf/, loader: 'file?prefix=font/'},
@@ -82,7 +81,7 @@ module.exports = {
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendors', // 将公共模块提取，生成名为`vendors`的chunk
 
-            chunks: ['index', 'aboutUs', 'articles', 'article', 'companyEnterprise', 'evaluation', 'community','educationHeart','companies','civilAviation'], //提取哪些模块共有的部分
+            chunks: ['index', 'aboutUs', 'articles', 'article', 'companyEnterprise', 'community','educationHeart','companies','civilAviation'], //提取哪些模块共有的部分
             // minChunks: 7 // 提取至少3个模块共有的部分
         }),
         //主页
@@ -140,17 +139,7 @@ module.exports = {
                 collapseWhitespace: false
             }
         }),
-        //人才测评  人力资源管理项目
-        new HtmlWebpackPlugin({
-            filename: './evaluation.html',
-            template: path.resolve(__dirname, 'view/evaluation/evaluation.html'),
-            inject: 'body',
-            chunks: ['vendors', 'evaluation'],   //需要引入的chunk，不配置就会引入所有页面的资源
-            minify: {
-                removeComments: false,
-                collapseWhitespace: false
-            }
-        }),
+
         //企业服务项目
         new HtmlWebpackPlugin({
             filename: './government.html',
@@ -184,7 +173,7 @@ module.exports = {
                 collapseWhitespace: false
             }
         }),
-        //教育心里服务项目
+        //公司企业服务项目
         new HtmlWebpackPlugin({
             filename: './companies.html',
             template: path.resolve(__dirname, 'view/companies/companies.html'),
