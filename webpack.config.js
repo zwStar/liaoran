@@ -26,6 +26,7 @@ module.exports = {
         filename: 'js/[name].js',     //每个页面对应的主js的生成配置
         chunkFilename: 'js/[name].chunk.js'   //chunk生成的配置
     },
+
     devtool: "source-map", //dusplay:inline-block js/check.name fileName:'js/[name.js]'
     devServer: {
         proxy:{
