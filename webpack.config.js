@@ -13,12 +13,11 @@ module.exports = {
         aboutUs: "./entry/aboutUs.js",
         articles: "./entry/articles.js",
         article: "./entry/article.js",
-        companyEnterprise: "./entry/companyEnterprise.js",  //
-        government: "./entry/government.js",
+       
         community: "./entry/community.js",
-        educationHeart:"./entry/educationHeart.js",
         companies:"./entry/companies.js",
-        civilAviation:"./entry/civilAviation.js"        //民用航空页面
+        civilAviation:"./entry/civilAviation.js",        //民用航空页面
+        baseEducation:"./entry/baseEducation.js"
     },
     output: {
         path: path.resolve("./build"), //输出目录的配置，模板、样式、脚本、图片等资源的路径配置都相对于它
@@ -82,7 +81,7 @@ module.exports = {
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendors', // 将公共模块提取，生成名为`vendors`的chunk
 
-            chunks: ['index', 'aboutUs', 'articles', 'article', 'companyEnterprise', 'community','educationHeart','companies','civilAviation'], //提取哪些模块共有的部分
+            chunks: ['index', 'aboutUs', 'articles', 'article', 'community','companies','civilAviation','baseEducation'], //提取哪些模块共有的部分
             // minChunks: 7 // 提取至少3个模块共有的部分
         }),
         //主页
@@ -129,29 +128,9 @@ module.exports = {
                 collapseWhitespace: false
             }
         }),
-        //商务合作下 企业项目页面
-        new HtmlWebpackPlugin({
-            filename: './companyEnterprise.html',
-            template: path.resolve(__dirname, 'view/companyEnterprise/companyEnterprise.html'),
-            inject: 'body',
-            chunks: ['vendors', 'companyEnterprise'],//需要引入的chunk，不配置就会引入所有页面的资源
-            minify: {
-                removeComments: false,
-                collapseWhitespace: false
-            }
-        }),
 
-        //企业服务项目
-        new HtmlWebpackPlugin({
-            filename: './government.html',
-            template: path.resolve(__dirname, 'view/government/government.html'),
-            inject: 'body',
-            chunks: ['vendors', 'government'],   //需要引入的chunk，不配置就会引入所有页面的资源
-            minify: {
-                removeComments: false,
-                collapseWhitespace: false
-            }
-        }),
+
+
         //社区服务项目
         new HtmlWebpackPlugin({
             filename: './community.html',
@@ -163,17 +142,7 @@ module.exports = {
                 collapseWhitespace: false
             }
         }),
-        //企业心里服务项目
-        new HtmlWebpackPlugin({
-            filename: './educationHeart.html',
-            template: path.resolve(__dirname, 'view/educationHeart/educationHeart.html'),
-            inject: 'body',
-            chunks: ['vendors', 'educationHeart'],   //需要引入的chunk，不配置就会引入所有页面的资源
-            minify: {
-                removeComments: false,
-                collapseWhitespace: false
-            }
-        }),
+
         //公司企业服务项目
         new HtmlWebpackPlugin({
             filename: './companies.html',
@@ -195,6 +164,17 @@ module.exports = {
                 removeComments: false,
                 collapseWhitespace: false
             }
-        })
+        }),
+        //基础教育
+        new HtmlWebpackPlugin({
+            filename: './baseEducation.html',
+            template: path.resolve(__dirname, 'view/baseEducation/baseEducation.html'),
+            inject: 'body',
+            chunks: ['vendors', 'baseEducation'],   //需要引入的chunk，不配置就会引入所有页面的资源
+            minify: {
+                removeComments: false,
+                collapseWhitespace: false
+            }
+        }),
     ]
 };
