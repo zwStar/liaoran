@@ -13,11 +13,11 @@ module.exports = {
         aboutUs: "./entry/aboutUs.js",
         articles: "./entry/articles.js",
         article: "./entry/article.js",
-       
         community: "./entry/community.js",
         companies:"./entry/companies.js",
         civilAviation:"./entry/civilAviation.js",        //民用航空页面
-        baseEducation:"./entry/baseEducation.js"
+        baseEducation:"./entry/baseEducation.js",
+        storm:"./entry/storm.js"
     },
     output: {
         path: path.resolve("./build"), //输出目录的配置，模板、样式、脚本、图片等资源的路径配置都相对于它
@@ -37,6 +37,10 @@ module.exports = {
                 target: proxypath,
                 secure:false
             },
+            '/storm':{
+                target: proxypath,
+                secure:false
+            }
         }
     },
     resolve: {
@@ -81,13 +85,13 @@ module.exports = {
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendors', // 将公共模块提取，生成名为`vendors`的chunk
 
-            chunks: ['index', 'aboutUs', 'articles', 'article', 'community','companies','civilAviation','baseEducation'], //提取哪些模块共有的部分
+            chunks: ['index', 'aboutUs', 'articles', 'article', 'community','companies','civilAviation','baseEducation','storm'], //提取哪些模块共有的部分
             // minChunks: 7 // 提取至少3个模块共有的部分
         }),
         //主页
         new HtmlWebpackPlugin({
-            filename: './index.html',
-            template: path.resolve(__dirname, 'view/index/index.html'),
+            filename: './storm.html',
+            template: path.resolve(__dirname, 'view/index/storm.html'),
             inject: 'body',
             chunks: ['vendors', 'index'],//需要引入的chunk，不配置就会引入所有页面的资源
             minify: {
@@ -171,6 +175,17 @@ module.exports = {
             template: path.resolve(__dirname, 'view/baseEducation/baseEducation.html'),
             inject: 'body',
             chunks: ['vendors', 'baseEducation'],   //需要引入的chunk，不配置就会引入所有页面的资源
+            minify: {
+                removeComments: false,
+                collapseWhitespace: false
+            }
+        }),
+        //它山之石
+        new HtmlWebpackPlugin({
+            filename: './storm.html',
+            template: path.resolve(__dirname, 'view/storm/storm.html'),
+            inject: 'body',
+            chunks: ['vendors', 'storm'],   //需要引入的chunk，不配置就会引入所有页面的资源
             minify: {
                 removeComments: false,
                 collapseWhitespace: false

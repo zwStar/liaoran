@@ -1,0 +1,119 @@
+#articles{
+  font-family: 微软雅黑;
+  padding:0 20px;
+  margin-top:40px;
+  //width: 1000px;
+  .articles{
+    padding-bottom:10px;
+    border-bottom: 1px solid #f0f0f0;
+    margin:15px 0;
+    .publisher{
+      display: inline-block;
+      font-size:14px;
+      margin:10px 30px 10px 10px;
+
+    }
+    .time{
+      display: inline-block;
+      font-size:14px;
+      color:#969696;
+    }
+    h3{
+      font-size:20px;
+      margin:0;
+      a{
+        color:#000;
+        text-decoration:none;
+      }
+    }
+    p{
+      margin:20px 0;
+    }
+    .img-wrapper{
+      float:right;
+      width: 150px;
+      height: 120px;
+      margin:10px 30px 0;
+      img{
+        width: 100%;
+        height: 100%;
+      }
+    }
+    a.article-footer{
+      text-decoration: none;
+      display: inline-block;
+      border:1px solid rgba(236,97,73,.7);
+      border-radius: 3px;
+      color:#ea6f5a;
+      padding:2px 6px;
+    }
+    .intro{
+      margin:10px 0;
+    }
+  }
+}
+.pagination-container{
+  margin:40px 0;
+  .pagination{
+    li{
+      float:left;
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      margin:0;
+      border:1px solid #d1dbe5;
+      text-align: center;
+      &:hover{
+        a{
+          color:#20a0ff;
+        }
+      }
+      a{
+        line-height: 30px;
+        text-decoration: none;
+        color:#000;
+
+      }
+    }
+  }
+}
+
+.pager-box:after{
+  display:block;
+  height:0;
+  visibility:hidden;
+  clear:both;
+  content:'';
+}
+.pager{
+  float:left;
+  position:relative;
+  left:50%;
+  font-family:微软雅黑;
+}
+.pager a,.pager span{
+  position:relative;
+  left:-50%;
+  display:block;
+  float:left;
+  margin-left:5px;
+  border:1px solid #b6bcc1;
+  padding: 5px 10px;
+  text-decoration:none;
+  color:#b6bcc1;
+  border-radius:3px;
+}
+.pager span{
+  border:0;
+}
+.pager a.js-selected{
+  background:#b6bcc1;
+  color:#fff;
+  cursor:default;
+}
+.pager a.js-disabled{
+  background:#f1f1f1;
+  border-color:#f1f1f1;
+  cursor:default;
+  color:#fff;
+}
