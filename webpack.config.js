@@ -12,8 +12,7 @@ module.exports = {
         index: "./entry/index.js",
         aboutUs: "./entry/aboutUs.js",
         articles: "./entry/articles.js",
-        article: "./entry/article.js",
-       
+        article: "./entry/article.js",      
         community: "./entry/community.js",
         companies:"./entry/companies.js",
         civilAviation:"./entry/civilAviation.js",        //民用航空页面

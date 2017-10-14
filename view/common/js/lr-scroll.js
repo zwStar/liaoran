@@ -22,7 +22,8 @@
             this.ListClick();               //绑定左侧列表点击事件
             this.scrollEvent();             //滚动条滚动事件
             this.wheelSlide();              //滑轮滚动事件
-            this.showDownList()             //如果左边导航第一项有下拉列表则显示下拉列表
+            this.showDownList();             //如果左边导航第一项有下拉列表则显示下拉列表
+            this.showTitle();               //替换{{title}}
         
         },
         getAnchorArr: function () {         //获取喵点位置
@@ -112,6 +113,29 @@
                 })
             }
             
+        },
+        showTitle:function(){
+            let href = window.location.href;
+            let reg = /\/([^\. | ^\/]*)\.html/;
+            switch(href.match(reg)[1]){
+                case "community":
+                    this.replace("家庭社区");
+                    break;
+                case "companies":
+                    this.replace("公司企业");
+                    break;
+                case "civilAviation":
+                    this.replace("民用航空");
+                    break;
+                case "baseEducation":
+                    this.replace("基础教育");
+                    break;
+            }  
+        },
+        replace:function(content){
+            $(".left .header h2").html(content);
+            content =  $(".right .header div").html().replace("{{title}}",content);
+            $(".right .header div").html(content);
         }
     }
 
