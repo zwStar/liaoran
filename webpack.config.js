@@ -6,7 +6,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin'); //每个html文件自动引入css js 文件
 
-var proxypath = "http://123.207.34.129:3000"
+var proxypath = "http://119.23.109.7:3000"
 module.exports = {
     entry: {
         index: "./entry/index.js",
@@ -90,8 +90,8 @@ module.exports = {
         }),
         //主页
         new HtmlWebpackPlugin({
-            filename: './storm.html',
-            template: path.resolve(__dirname, 'view/index/storm.html'),
+            filename: './index.html',
+            template: path.resolve(__dirname, 'view/index/index.html'),
             inject: 'body',
             chunks: ['vendors', 'index'],//需要引入的chunk，不配置就会引入所有页面的资源
             minify: {

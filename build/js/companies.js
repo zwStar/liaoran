@@ -1,4 +1,4 @@
-webpackJsonp([1],{
+webpackJsonp([5],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -15,14 +15,7 @@ __webpack_require__(3);
 __webpack_require__(0);
 __webpack_require__(4);
 
-__webpack_require__(21);
-
-/***/ }),
-
-/***/ 21:
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
+/* require("../view/companies/scss/companies.scss") */
 
 /***/ }),
 

@@ -1,4 +1,4 @@
-webpackJsonp([4],{
+webpackJsonp([8],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,7 +7,7 @@ webpackJsonp([4],{
 
 /***/ }),
 
-/***/ 24:
+/***/ 22:
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(2);
@@ -15,14 +15,7 @@ __webpack_require__(3);
 __webpack_require__(0);
 __webpack_require__(4);
 
-__webpack_require__(25);
-
-/***/ }),
-
-/***/ 25:
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
+/* require("view/baseEducation/scss/baseEducation.scss") */
 
 /***/ }),
 
@@ -151,5 +144,5 @@ $(function () {
 
 /***/ })
 
-},[24]);
+},[22]);
 //# sourceMappingURL=baseEducation.js.map

@@ -1,10 +1,13 @@
-webpackJsonp([6],[
-/* 0 */,
-/* 1 */,
-/* 2 */,
-/* 3 */,
-/* 4 */,
-/* 5 */
+webpackJsonp([4],{
+
+/***/ 10:
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ 8:
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -12,33 +15,24 @@ webpackJsonp([6],[
  */
 __webpack_require__(2);
 __webpack_require__(3);
-__webpack_require__(6);
-__webpack_require__(7);
+__webpack_require__(9);
+__webpack_require__(10);
 
 /***/ }),
-/* 6 */
-/***/ (function(module, exports) {
 
-/**
- * Created by admin on 2017/8/16.
- */
-// let data =  fetch("/user/studentsCount");
-// const responseJson =  data.json();
-// console.log(responseJson)
-// $(function () {
-//     window.fetch("/user/studentsCount").then((data)=>{
-//         console.log(JSON.parse(data))
-//         const responseJson =  data.json();
-//         console.log(responseJson)
-//     })
-// })
+/***/ 9:
+/***/ (function(module, exports, __webpack_require__) {
 
-/***/ }),
-/* 7 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
+/* WEBPACK VAR INJECTION */(function($) {
+$(function () {
+  var mySwiper = new Swiper('.swiper-container', {
+    autoplay: 2000, //可选选项，自动滑动
+    autoplayDisableOnInteraction: false
+  });
+});
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ })
-],[5]);
+
+},[8]);
 //# sourceMappingURL=index.js.map

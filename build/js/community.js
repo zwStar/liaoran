@@ -1,4 +1,4 @@
-webpackJsonp([2],{
+webpackJsonp([6],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -7,7 +7,7 @@ webpackJsonp([2],{
 
 /***/ }),
 
-/***/ 17:
+/***/ 18:
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(2);
@@ -15,13 +15,12 @@ __webpack_require__(3);
 __webpack_require__(0);
 // require("view/common/js/lr-scroll.js")
 
-__webpack_require__(18);
-
 __webpack_require__(19);
+// require("view/community/scss/community.scss")
 
 /***/ }),
 
-/***/ 18:
+/***/ 19:
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(__webpack_provided_window_dot_jQuery, $) {/**
@@ -142,14 +141,7 @@ $(function () {
 });
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(1)))
 
-/***/ }),
-
-/***/ 19:
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
 /***/ })
 
-},[17]);
+},[18]);
 //# sourceMappingURL=community.js.map

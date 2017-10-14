@@ -2,11 +2,14 @@
   width: 100%;
   min-width: 1200px;
   height: 100%; }
-  .indexPicture img {
+  .indexPicture .swiper-container {
     width: 100%;
-    height: 100%;
-    background-size: cover;
-    background: no-repeat; }
+    height: 100%; }
+    .indexPicture .swiper-container img {
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background: no-repeat; }
 
 .aboutUs {
   width: 100%;
