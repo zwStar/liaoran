@@ -58,11 +58,9 @@
                     'margin-top':'0px'
                 })
                 if($(this).find(".downList").length == 0 ){
-
                     _this.content.scrollTop(_this.anchorArr[$(this).index()]);          //滚动到相应的位置
 
                 }else{
-                    
                     var downList  = $(this).find(".downList");
                     _this.showDownList(downList);
                 }
@@ -71,7 +69,6 @@
         },
         scrollEvent: function () {
             var _this = this;
-
             _this.content.on("scroll", function (event) {
                 _this.listActive();
             })
