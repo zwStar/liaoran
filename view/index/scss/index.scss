@@ -2,14 +2,44 @@
   width: 100%;
   min-width: 1200px;
   height: 100%;
-  .swiper-container{
+  .background{
+    position: relative;
     width: 100%;
     height: 100%;
-    img{
+    .bgImage{
+      position: absolute;
+      z-index: -1;
       width: 100%;
       height: 100%;
-      background-size: cover;
-      background: no-repeat;
+    }
+    .content{
+      text-align: center;
+      img{
+        width: 300px;
+        height: auto;
+        display: block;
+        margin:auto ;
+      }
+      .chinese-name{
+        font-size: 65px;
+        font-weight: bold;
+        color: red;
+        font-family: "隶书";
+        margin-top: 50px;
+      }
+      .english-name{
+        color: blue;
+        font-size: 30px;
+      }
+      .advertisement{
+        margin-top: 100px;
+        font-family: "微软雅黑";
+        p{
+          font-size: 35px;
+          color: purple;
+          font-weight: bold;
+        }
+      }
     }
   }
 }
