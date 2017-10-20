@@ -52,6 +52,8 @@ article {
         color: #379d6b; }
         article .left .navList ul li.active .iconfont {
           transform: rotate(90deg); }
+        article .left .navList ul li.active a {
+          color: #379d6b; }
   article .right {
     float: left;
     width: 70%;

@@ -22,8 +22,9 @@
             this.ListClick();               //绑定左侧列表点击事件
             this.scrollEvent();             //滚动条滚动事件
             this.wheelSlide();              //滑轮滚动事件
-            // this.showDownList()             //如果左边导航第一项有下拉列表则显示下拉列表
-        
+            this.showDownList();             //如果左边导航第一项有下拉列表则显示下拉列表
+            this.showTitle();               //替换{{title}}
+
         },
         getAnchorArr: function () {         //获取喵点位置
             var _this = this;
@@ -39,7 +40,7 @@
                     j = i;
                     return j;
                 }
-                if(this.content[0].scrollHeight <= this.scrollTop() + this.content.height() + 100){
+                if (this.content[0].scrollHeight <= this.scrollTop() + this.content.height() + 100) {
                 }
             }
             return j;
@@ -52,17 +53,15 @@
             _this.leftList.on("click", function () {
                 $(this).addClass("active").siblings().removeClass("active");        //为点击增加active 并且remove其它li的active
                 $(".downList").css({
-                    'height':'0px',
-                    'opacity':0,
-                    'margin-top':'0px'
+                    'height': '0px',
+                    'opacity': 0,
+                    'margin-top': '0px'
                 })
-                if($(this).find(".downList").length == 0 ){
-
+                if ($(this).find(".downList").length == 0) {
                     _this.content.scrollTop(_this.anchorArr[$(this).index()]);          //滚动到相应的位置
 
-                }else{
-                    
-                    var downList  = $(this).find(".downList");
+                } else {
+                    var downList = $(this).find(".downList");
                     // _this.showDownList(downList);
                 }
 
@@ -70,7 +69,6 @@
         },
         scrollEvent: function () {
             var _this = this;
-
             _this.content.on("scroll", function (event) {
                 _this.listActive();
             })
@@ -87,7 +85,7 @@
                 _this.leftList.eq(index).addClass("active").siblings().removeClass("active");
             }
         },
-        scrollTo:function (position) {
+        scrollTo: function (position) {
             var _this = this;
             _this.content.scrollTop(position);
             _this.listActive();
@@ -98,20 +96,45 @@
             var position = 0;
             _this.content.on("mousewheel DOMMouseScroll", function (e) {
                 var oev = e.originalEvent;
-                position = (oev.wheelDelta ? -oev.wheelDelta / 120 : (oev.detail / 3)) * wheelrate +this.scrollTop;
+                position = (oev.wheelDelta ? -oev.wheelDelta / 120 : (oev.detail / 3)) * wheelrate + this.scrollTop;
                 _this.scrollTo(position);
             })
         },
-        // showDownList:function(downList){
-        //     downList = downList || $(".navList li:eq(0) .downList");
-        //     if(downList){
-        //         $(downList).css({
-        //             'height':downList.children().length * 30 + 'px',
-        //             'opacity':1,
-        //             'margin-top':'5px'
-        //         })
-        //     }
-        // }
+        showDownList: function (downList) {
+            downList = downList || $(".navList li:eq(0) .downList");
+            if (downList) {
+                $(downList).css({
+                    'height': downList.children().length * 30 + 'px',
+                    'opacity': 1,
+                    'margin-top': '5px'
+                })
+            }
+
+        },
+        showTitle: function () {
+            let href = window.location.href;
+            let reg = /\/([^\. | ^\/]*)\.html/;
+            switch (href.match(reg)[1]) {
+                case "community":
+                    this.replace("家庭社区");
+                    break;
+                case "companies":
+                    this.replace("公司企业");
+                    break;
+                case "civilAviation":
+                    this.replace("民用航空");
+                    break;
+                case "baseEducation":
+                    this.replace("基础教育");
+                    break;
+            }
+        },
+        replace: function (content) {
+            $(".left .header h2").html(content);
+            content = $(".right .header div").html().replace("{{title}}", content);
+            $(".right .header div").html(content);
+        }
+
     }
 
 

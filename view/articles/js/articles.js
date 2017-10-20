@@ -27,6 +27,10 @@
             var url = location.href;
             var re = /page=([\d]+)&?/;          //匹配页数正则
             var reType = /type=([\w]+)&?/;      //匹配类型正则
+            var categoryRE = /category=([\w]+)&?/;  //匹配类别栏目正则
+            _this.category = url.match(categoryRE) || "college";
+
+            _this.initLeftColumn(_this.category);   //初始化左侧栏目
             _this.type = url.match(reType) && url.match(reType)[1] || "theory";
             template = template.replace("{{type}}", _this.type);
             _this.base_url = "http://www.gdliaoran.com/articles.html?type=" + _this.type + "&page={{page}}";//获取文章类型和第几页
@@ -101,6 +105,9 @@
                     break;
                 }
             }
+        },
+        initLeftColumn:function(category){
+
         }
     }
     new Pagination({

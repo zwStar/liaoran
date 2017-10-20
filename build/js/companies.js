@@ -1,4 +1,4 @@
-webpackJsonp([5],{
+webpackJsonp([6],{
 
 /***/ 0:
 /***/ (function(module, exports) {
@@ -13,13 +13,13 @@ webpackJsonp([5],{
 __webpack_require__(2);
 __webpack_require__(3);
 __webpack_require__(0);
-__webpack_require__(4);
+__webpack_require__(7);
 
 /* require("../view/companies/scss/companies.scss") */
 
 /***/ }),
 
-/***/ 4:
+/***/ 7:
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(__webpack_provided_window_dot_jQuery, $) {/**
@@ -46,7 +46,8 @@ __webpack_require__(4);
             this.ListClick(); //绑定左侧列表点击事件
             this.scrollEvent(); //滚动条滚动事件
             this.wheelSlide(); //滑轮滚动事件
-            // this.showDownList()             //如果左边导航第一项有下拉列表则显示下拉列表
+            this.showDownList(); //如果左边导航第一项有下拉列表则显示下拉列表
+            this.showTitle(); //替换{{title}}
         },
         getAnchorArr: function () {
             //获取喵点位置
@@ -80,10 +81,8 @@ __webpack_require__(4);
                     'margin-top': '0px'
                 });
                 if ($(this).find(".downList").length == 0) {
-
                     _this.content.scrollTop(_this.anchorArr[$(this).index()]); //滚动到相应的位置
                 } else {
-
                     var downList = $(this).find(".downList");
                     // _this.showDownList(downList);
                 }
@@ -91,7 +90,6 @@ __webpack_require__(4);
         },
         scrollEvent: function () {
             var _this = this;
-
             _this.content.on("scroll", function (event) {
                 _this.listActive();
             });
@@ -123,17 +121,41 @@ __webpack_require__(4);
                 position = (oev.wheelDelta ? -oev.wheelDelta / 120 : oev.detail / 3) * wheelrate + this.scrollTop;
                 _this.scrollTo(position);
             });
+        },
+        showDownList: function (downList) {
+            downList = downList || $(".navList li:eq(0) .downList");
+            if (downList) {
+                $(downList).css({
+                    'height': downList.children().length * 30 + 'px',
+                    'opacity': 1,
+                    'margin-top': '5px'
+                });
+            }
+        },
+        showTitle: function () {
+            let href = window.location.href;
+            let reg = /\/([^\. | ^\/]*)\.html/;
+            switch (href.match(reg)[1]) {
+                case "community":
+                    this.replace("家庭社区");
+                    break;
+                case "companies":
+                    this.replace("公司企业");
+                    break;
+                case "civilAviation":
+                    this.replace("民用航空");
+                    break;
+                case "baseEducation":
+                    this.replace("基础教育");
+                    break;
+            }
+        },
+        replace: function (content) {
+            $(".left .header h2").html(content);
+            content = $(".right .header div").html().replace("{{title}}", content);
+            $(".right .header div").html(content);
         }
-        // showDownList:function(downList){
-        //     downList = downList || $(".navList li:eq(0) .downList");
-        //     if(downList){
-        //         $(downList).css({
-        //             'height':downList.children().length * 30 + 'px',
-        //             'opacity':1,
-        //             'margin-top':'5px'
-        //         })
-        //     }
-        // }
+
     };
 })(__webpack_provided_window_dot_jQuery, "ScrollAuto");
 

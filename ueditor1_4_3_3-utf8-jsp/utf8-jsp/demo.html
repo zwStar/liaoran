@@ -1,0 +1,182 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ueditor demo</title>
+</head>
+
+<body>
+    <input class="title" placeholder="文章标题"  id="xxxxx">
+    <input class="intro" placeholder="文章简介">
+    <select name="" class="type">
+        <option value="theory" label="理论精华"></option>
+        <option value="experiment" label="经典实验"></option>
+        <option value="theatre" label="心理剧场"></option>
+        <option value="notes" label="心理美文"></option>
+
+        <option value="storm" label="它山之石"></option>
+        <option value="date" label="时代脉搏"></option>
+        <option value="person" label="大写的人"></option>
+        <option value="word" label="警世通言"></option>
+        <option value="healthy" label="健康中国"></option>
+    </select>
+
+    <select>
+        <option value ="volvo"></option>
+        <option value ="saab"></option>
+        <option value="opel"></option>
+        <option value="audi"></option>
+    </select>
+    <div id="qiniu-container" style="height: 50px; background: #C40000">
+        <a href="javascript:void(0);" id="pickfiles" >sdfsdfsdf</a>
+    </div>
+
+    <button>提交</button>
+
+    <!--<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>-->
+    <script src="jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="./src/assets/js/plupload.full.min.js"></script>
+    <script type="text/javascript" src="./src/assets/js/plupload/i18n/zh_CN.js"></script>
+    <script src="./src/assets/js/qiniu.js"></script>
+    <!-- 加载编辑器的容器 -->
+    <script id="container" name="content" type="text/plain">
+        这里写你的初始化内容
+    </script>
+    <!-- 配置文件 -->
+    <script type="text/javascript" src="ueditor.config.js"></script>
+    <!-- 编辑器源码文件 -->
+    <script type="text/javascript" src="ueditor.all.js"></script>
+    <!-- 实例化编辑器 -->
+    <script type="text/javascript">
+        var token = "";
+        var mainImg = "";
+        $.ajax({
+            url:"http://127.0.0.1:3000/services/uptoken",
+            success:function (data) {
+                console.log(data)
+                token = data.uptoken;
+                console.log(token)
+                var uploader = Qiniu.uploader({
+                    runtimes: 'html5,flash,html4',      // 上传模式，依次退化
+                    browse_button: 'pickfiles',         // 上传选择的点选按钮，必需
+                    // 在初始化时，uptoken，uptoken_url，uptoken_func三个参数中必须有一个被设置
+                    // 切如果提供了多个，其优先级为uptoken > uptoken_url > uptoken_func
+                    // 其中uptoken是直接提供上传凭证，uptoken_url是提供了获取上传凭证的地址，如果需要定制获取uptoken的过程则可以设置uptoken_func
+                    uptoken : token, // uptoken是上传凭证，由其他程序生成
+                    // uptoken_url: '/uptoken',         // Ajax请求uptoken的Url，强烈建议设置（服务端提供）
+                    // uptoken_func: function(){    // 在需要获取uptoken时，该方法会被调用
+                    //    // do something
+                    //    return uptoken;
+                    // },
+                    get_new_uptoken: false,             // 设置上传文件的时候是否每次都重新获取新的uptoken
+                    // downtoken_url: '/downtoken',
+                    // Ajax请求downToken的Url，私有空间时使用，JS-SDK将向该地址POST文件的key和domain，服务端返回的JSON必须包含url字段，url值为该文件的下载地址
+                    // unique_names: true,              // 默认false，key为文件名。若开启该选项，JS-SDK会为每个文件自动生成key（文件名）
+                    // save_key: true,                  // 默认false。若在服务端生成uptoken的上传策略中指定了sava_key，则开启，SDK在前端将不对key进行任何处理
+                    domain: 'http://otium2xph.bkt.clouddn.com',     // bucket域名，下载资源时用到，必需
+                    container: 'qiniu-container',             // 上传区域DOM ID，默认是browser_button的父元素
+                    max_file_size: '100mb',             // 最大文件体积限制
+                    flash_swf_url: 'path/of/plupload/Moxie.swf',  //引入flash，相对路径
+                    max_retries: 3,                     // 上传失败最大重试次数
+                    dragdrop: true,                     // 开启可拖曳上传
+                    drop_element: 'container',          // 拖曳上传区域元素的ID，拖曳文件或文件夹后可触发上传
+                    chunk_size: '4mb',                  // 分块上传时，每块的体积
+                    auto_start: true,                   // 选择文件后自动上传，若关闭需要自己绑定事件触发上传
+                    //x_vars : {
+                    //    查看自定义变量
+                    //    'time' : function(up,file) {
+                    //        var time = (new Date()).getTime();
+                    // do something with 'time'
+                    //        return time;
+                    //    },
+                    //    'size' : function(up,file) {
+                    //        var size = file.size;
+                    // do something with 'size'
+                    //        return size;
+                    //    }
+                    //},
+                    init: {
+                        'FilesAdded': function(up, files) {
+                            plupload.each(files, function(file) {
+                                // 文件添加进队列后，处理相关的事情
+                            });
+                        },
+                        'BeforeUpload': function(up, file) {
+                            // 每个文件上传前，处理相关的事情
+                        },
+                        'UploadProgress': function(up, file) {
+                            // 每个文件上传时，处理相关的事情
+                        },
+                        'FileUploaded': function(up, file, info) {
+                            // 每个文件上传成功后，处理相关的事情
+                            // 其中info是文件上传成功后，服务端返回的json，形式如：
+                            // {
+                            //    "hash": "Fh8xVqod2MQ1mocfI4S4KpRL6D98",
+                            //    "key": "gogopher.jpg"
+                            //  }
+                            // 查看简单反馈
+                             var domain = up.getOption('domain');
+                             var res = JSON.parse(info);
+                             var sourceLink = domain +"/"+ res.key;
+                            console.log(sourceLink)
+                            mainImg = sourceLink;
+
+                        },
+                        'Error': function(up, err, errTip) {
+                            //上传出错时，处理相关的事情
+                        },
+                        'UploadComplete': function() {
+                            //队列文件处理完毕后，处理相关的事情
+                        },
+                        'Key': function(up, file) {
+                            // 若想在前端对每个文件的key进行个性化处理，可以配置该函数
+                            // 该配置必须要在unique_names: false，save_key: false时才生效
+
+                            var key = "articles/"+ Math.ceil(Math.random() * 1000) + ".png";
+                            // do something with key here
+                            return key
+                        }
+                    }
+                });
+            }
+        });
+
+
+
+        // domain为七牛空间对应的域名，选择某个空间后，可通过 空间设置->基本设置->域名设置 查看获取
+
+        // uploader为一个plupload对象，继承了所有plupload的方法
+
+        $(function(){
+
+            var ue = UE.getEditor('container');
+            $("button").click(function(){
+                var content = ue.getContent();
+                var data = {};
+                data.publisher = "了然文化"
+                data.content = content;
+                var title = $(".title").val();
+
+                var intro = $(".intro").val();
+                data.title = title;
+                data.intro = intro;
+                data.type = $(".type").val()
+                data.mainImg = mainImg;
+                console.log(data)
+                $.ajax({
+                    url:"http://127.0.0.1:3000/addarticle/lrArticle",
+                    type:"POST",
+                    data:data,
+                })
+            })
+
+        })
+    </script>
+
+    <script>
+
+    </script>
+</body>
+
+</html>

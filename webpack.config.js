@@ -14,10 +14,11 @@ module.exports = {
         articles: "./entry/articles.js",
         article: "./entry/article.js",
         community: "./entry/community.js",
-        companies:"./entry/companies.js",
-        civilAviation:"./entry/civilAviation.js",        //民用航空页面
-        baseEducation:"./entry/baseEducation.js",
-        storm:"./entry/storm.js"
+        companies: "./entry/companies.js",
+        civilAviation: "./entry/civilAviation.js",        //民用航空页面
+        baseEducation: "./entry/baseEducation.js",
+        storm: "./entry/storm.js",
+        heartToWorld: './entry/heartToWorld.js'
     },
     output: {
         path: path.resolve("./build"), //输出目录的配置，模板、样式、脚本、图片等资源的路径配置都相对于它
@@ -28,19 +29,16 @@ module.exports = {
 
     devtool: "source-map", //dusplay:inline-block js/check.name fileName:'js/[name.js]'
     devServer: {
-        proxy:{
-            '/user':{
+        proxy: {
+            '/user': {
                 target: proxypath,
-                secure:false
+                secure: false
             },
-            '/articles':{
+            '/articles': {
                 target: proxypath,
-                secure:false
+                secure: false
             },
-            '/storm':{
-                target: proxypath,
-                secure:false
-            }
+
         }
     },
     resolve: {
@@ -85,7 +83,7 @@ module.exports = {
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendors', // 将公共模块提取，生成名为`vendors`的chunk
 
-            chunks: ['index', 'aboutUs', 'articles', 'article', 'community','companies','civilAviation','baseEducation','storm'], //提取哪些模块共有的部分
+            chunks: ['index', 'aboutUs', 'articles', 'article', 'community', 'companies', 'civilAviation', 'baseEducation', 'storm', 'heartToWorld'], //提取哪些模块共有的部分
             // minChunks: 7 // 提取至少3个模块共有的部分
         }),
         //主页
@@ -132,7 +130,6 @@ module.exports = {
                 collapseWhitespace: false
             }
         }),
-
 
 
         //社区服务项目
@@ -186,6 +183,16 @@ module.exports = {
             template: path.resolve(__dirname, 'view/storm/storm.html'),
             inject: 'body',
             chunks: ['vendors', 'storm'],   //需要引入的chunk，不配置就会引入所有页面的资源
+            minify: {
+                removeComments: false,
+                collapseWhitespace: false
+            }
+        }),
+        new HtmlWebpackPlugin({
+            filename: './heartToWorld.html',
+            template: path.resolve(__dirname, 'view/heartToWorld/heartToWorld.html'),
+            inject: 'body',
+            chunks: ['vendors', 'heartToWorld'],   //需要引入的chunk，不配置就会引入所有页面的资源
             minify: {
                 removeComments: false,
                 collapseWhitespace: false

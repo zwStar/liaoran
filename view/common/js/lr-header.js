@@ -9,7 +9,7 @@
     '    </div>',
     '	<nav>',
     '		<ul>',
-    '			<li class="item"><a href="./storm.html"><span>首页</span></a></li><!-- ',
+    '			<li class="item"><a href="./index.html"><span>首页</span></a></li><!-- ',
     '		 --><li class="item">',
     '				<span>心理学苑</span>',
     '				<ul class="pull-down-list">',
@@ -43,26 +43,32 @@
     '				<span>心观天下</span>',
     '				<ul class="pull-down-list">',
     '					<li>',
-    '						<a href="./storm.html">',
+    '						<a href="./heartToWorld.html?type=storm">',
     '							它山之石',
     '							<div class="border"></div>',
     '						</a>',
     '					</li><!-- ',
     '				 --><li>',
-    '				 		<a href="">',
+    '				 		<a href="./heartToWorld.html?type=date">',
     '				 			时代脉搏',
     '				 			<div class="border"></div>',
     '				 		</a>',
     '				 	</li><!-- ',
     '				 --><li>',
-    '				 		<a href="">',
+    '				 		<a href="./heartToWorld.html?type=person">',
     '				 			大写的人',
     '				 			<div class="border"></div>',
     '				 		</a>',
     '				 	</li><!-- ',
     '				 --><li>',
-    '				 		<a href="">',
+    '				 		<a href="./heartToWorld.html?type=word">',
     '				 			警世通言',
+    '				 			<div class="border"></div>',
+    '				 		</a>',
+    '				 	</li><!-- ',
+    '				 --><li>',
+    '				 		<a href="./heartToWorld.html?type=healthy">',
+    '				 			健康中国',
     '				 			<div class="border"></div>',
     '				 		</a>',
     '				 	</li>',
@@ -118,7 +124,7 @@
     $("body").prepend(header);
     $("body>script").length>0 ? $('body>script').eq(0).before(footer):$('body').append(footer);
 
-    var href = window.location.href;
+/*    var href = window.location.href;
     var index = href.lastIndexOf("/");
 
     var header = $("header");
@@ -139,6 +145,6 @@
         default:
 
             break;
-    }
+    }*/
 
 })(window.jQuery)
