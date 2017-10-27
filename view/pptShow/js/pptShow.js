@@ -9,15 +9,12 @@
     }
 
     //文章模板
-    var template = ['<section class="articles">',
+    var template = ['<section class="articles" id="{{id}}">     ',
         '  <div class="img-wrapper">',
         '<img src="{{mainImg}}">',
         '</div>',
         '        <span class="publisher">{{publisher}}</span><span class="time">{{date}}</span>',
         '        <h3><a href="./article.html?id={{id}}&type={{type}}">{{title}}</a></h3>',
-        '        <div class="intro">',
-        '            {{intro}}',
-        '        </div>',
         '        <a class="article-footer" href="#">{{artcilesType}}</a>',
         '    </section>'].join("");
 
@@ -26,18 +23,12 @@
             var _this = this;
             var url = location.href;
             var re = /page=([\d]+)&?/;          //匹配页数正则
-            var reType = /type=([\w]+)&?/;      //匹配类型正则
-            var categoryRE = /category=([\w]+)&?/;  //匹配类别栏目正则
-            _this.category = url.match(categoryRE)[1] || "college"; //获取当前栏目 (心观天下 心理学苑)
 
-            _this.initLeftColumn(_this.category);   //初始化左侧栏目
-            _this.type = url.match(reType) && url.match(reType)[1] || "theory";
-            template = template.replace("{{type}}", _this.type);
             _this.base_url = "http://www.gdliaoran.com/articles.html?type=" + _this.type + "&page={{page}}" + "&category=" + _this.category;//获取文章类型和第几页
-            _this.changeActive(_this.type);   //改变左侧高亮
             _this.index = (url.match(re) && parseInt(url.match(re)[1])) || 1;   //当前第几页
             _this.getArticle(_this.index);  //获取文章
             _this.getCount();       //获取总数量
+
         },
         getCount: function () { //获取总共有多少文章
             var _this = this;
@@ -53,7 +44,6 @@
         },
         paginationInit: function (index, total) {       //初始化分页器
             var _this = this;
-            console.log(_this.parent[0])
             var pager = new Pager({
                 index: index,               //当前索引
                 total: total,               //总页数
@@ -117,7 +107,6 @@
                         {name: '鲜活实验', type: 'experiment'},
                         {name: '心理剧场', type: 'theatre'},
                         {name: '百科美文', type: 'notes'}]
-                    $(".header").find("h2").html("心理学苑");
                     break;
                 case 'heartWorld':
                     lists = [
@@ -126,8 +115,6 @@
                         {name: '大写的人', type: 'person'},
                         {name: '警世通言', type: 'word'},
                         {name: '健康中国', type: 'healthy'}]
-                    console.log($(".header").find("h2"))
-                    $(".header").find("h2").html("心观天下") ;
                     break;
             }
             var navList = $(".navList");
@@ -136,7 +123,7 @@
             var li;
             lists.forEach(item => {
                 var temp = template;
-                if(item.name === '健康中国'){
+                if (item.name === '健康中国') {
                     temp = `<li class="active"><i class="iconfont">&#xe618;</i><a href="./pptShow.html?type=healthy&category=${category}">{{name}}</a>
                 </li>`
                 }
@@ -144,12 +131,49 @@
                 ul.append(temp);
             })
             navList.append(ul)
-        }
+        },
+        pphShow: function () {
+            var _this = this;
+            var slider = `<div class="swiper-slide"><img src="{{src}}"></div>`
+            $(".articles").on("click", function () {
+                var url = '/articles/lrPPT/get';
+                var type = "GET";
+                var id = this.attr("id");
+                _this.ajaxRequest(url, {id: id}, {}, function (results) {
+
+                    // $(".container")
+                })
+            })
+        },
+
+
     }
     new Pagination({
         PageNum: 4,
         parent: $("#pager"),
         articles: $("#articles"),
         navList: $(".navList")
+    })
+
+    function  initSwiper() {
+        new Swiper('.swiper-container', {
+            loop: true,
+            // 如果需要分页器
+            pagination: {
+                el: '.swiper-pagination',
+            },
+            // 如果需要前进后退按钮
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            }
+        })
+    }
+    $(".articles").on("click",function(){
+        $(".container").fadeIn(1000);
+        initSwiper();
+    });
+    $(".close").on("click",function(){
+        $(".container").fadeOut(1000);
     })
 })(window.jQuery)

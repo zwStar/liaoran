@@ -1,15 +1,39 @@
+@charset "UTF-8";
 .indexPicture {
   width: 100%;
   min-width: 1200px;
   height: 100%; }
-  .indexPicture .swiper-container {
+  .indexPicture .background {
+    position: relative;
     width: 100%;
     height: 100%; }
-    .indexPicture .swiper-container img {
+    .indexPicture .background .bgImage {
+      position: absolute;
+      z-index: -1;
       width: 100%;
-      height: 100%;
-      background-size: cover;
-      background: no-repeat; }
+      height: 100%; }
+    .indexPicture .background .content {
+      text-align: center; }
+      .indexPicture .background .content img {
+        width: 240px;
+        height: auto;
+        display: block;
+        margin: auto;
+        transform: translate(470px, 25px); }
+      .indexPicture .background .content .chinese-name {
+        font-size: 48px;
+        font-weight: bold;
+        color: red; }
+      .indexPicture .background .content .english-name {
+        color: #001280;
+        font-size: 30px; }
+      .indexPicture .background .content .advertisement {
+        margin-top: 60px;
+        font-family: "\5FAE\8F6F\96C5\9ED1"; }
+        .indexPicture .background .content .advertisement p {
+          font-size: 35px;
+          color: #001280;
+          font-weight: bold; }
 
 .aboutUs {
   width: 100%;

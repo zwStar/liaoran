@@ -18,7 +18,7 @@ module.exports = {
         civilAviation: "./entry/civilAviation.js",        //民用航空页面
         baseEducation: "./entry/baseEducation.js",
         storm: "./entry/storm.js",
-        heartToWorld: './entry/heartToWorld.js'
+        pptShow:"./entry/pptShow.js"
     },
     output: {
         path: path.resolve("./build"), //输出目录的配置，模板、样式、脚本、图片等资源的路径配置都相对于它
@@ -83,7 +83,7 @@ module.exports = {
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendors', // 将公共模块提取，生成名为`vendors`的chunk
 
-            chunks: ['index', 'aboutUs', 'articles', 'article', 'community', 'companies', 'civilAviation', 'baseEducation', 'storm', 'heartToWorld'], //提取哪些模块共有的部分
+            chunks: ['index', 'aboutUs', 'articles', 'article', 'community', 'companies', 'civilAviation', 'baseEducation', 'storm', 'pptShow'], //提取哪些模块共有的部分
             // minChunks: 7 // 提取至少3个模块共有的部分
         }),
         //主页
@@ -189,14 +189,14 @@ module.exports = {
             }
         }),
         new HtmlWebpackPlugin({
-            filename: './heartToWorld.html',
-            template: path.resolve(__dirname, 'view/heartToWorld/heartToWorld.html'),
+            filename: './pptShow.html',
+            template: path.resolve(__dirname, 'view/pptShow/pptShow.html'),
             inject: 'body',
-            chunks: ['vendors', 'heartToWorld'],   //需要引入的chunk，不配置就会引入所有页面的资源
+            chunks: ['vendors', 'pptShow'],   //需要引入的chunk，不配置就会引入所有页面的资源
             minify: {
                 removeComments: false,
                 collapseWhitespace: false
             }
-        }),
+        })
     ]
 };

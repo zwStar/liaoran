@@ -21,16 +21,9 @@ __webpack_require__(10);
 /***/ }),
 
 /***/ 9:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-/* WEBPACK VAR INJECTION */(function($) {
-$(function () {
-  var mySwiper = new Swiper('.swiper-container', {
-    autoplay: 2000, //可选选项，自动滑动
-    autoplayDisableOnInteraction: false
-  });
-});
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+
 
 /***/ })
 

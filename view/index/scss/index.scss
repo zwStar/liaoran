@@ -15,28 +15,27 @@
     .content{
       text-align: center;
       img{
-        width: 300px;
+        width: 240px;
         height: auto;
         display: block;
         margin:auto ;
+        transform: translate(470px,25px);
       }
       .chinese-name{
-        font-size: 65px;
+        font-size:48px;
         font-weight: bold;
         color: red;
-        font-family: "隶书";
-        margin-top: 50px;
-      }
+    }
       .english-name{
-        color: blue;
+        color: #001280;
         font-size: 30px;
       }
       .advertisement{
-        margin-top: 100px;
+        margin-top: 60px;
         font-family: "微软雅黑";
         p{
           font-size: 35px;
-          color: purple;
+          color: #001280;
           font-weight: bold;
         }
       }

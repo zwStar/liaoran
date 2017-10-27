@@ -1,4 +1,4 @@
-webpackJsonp([2],[
+webpackJsonp([1],[
 /* 0 */
 /***/ (function(module, exports) {
 
@@ -258,6 +258,13 @@ webpackJsonp([2],[
 
 /***/ }),
 /* 5 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 6 */,
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(__webpack_provided_window_dot_jQuery) {(function ($) {
@@ -279,9 +286,13 @@ webpackJsonp([2],[
             var url = location.href;
             var re = /page=([\d]+)&?/; //匹配页数正则
             var reType = /type=([\w]+)&?/; //匹配类型正则
+            var categoryRE = /category=([\w]+)&?/; //匹配类别栏目正则
+            _this.category = url.match(categoryRE)[1] || "college"; //获取当前栏目 (心观天下 心理学苑)
+
+            _this.initLeftColumn(_this.category); //初始化左侧栏目
             _this.type = url.match(reType) && url.match(reType)[1] || "theory";
             template = template.replace("{{type}}", _this.type);
-            _this.base_url = "http://www.gdliaoran.com/articles.html?type=" + _this.type + "&page={{page}}"; //获取文章类型和第几页
+            _this.base_url = "http://www.gdliaoran.com/articles.html?type=" + _this.type + "&page={{page}}" + "&category=" + _this.category; //获取文章类型和第几页
             _this.changeActive(_this.type); //改变左侧高亮
             _this.index = url.match(re) && parseInt(url.match(re)[1]) || 1; //当前第几页
             _this.getArticle(_this.index); //获取文章
@@ -355,6 +366,36 @@ webpackJsonp([2],[
                     break;
                 }
             }
+        },
+        initLeftColumn: function (category) {
+            var template = `<li class="active"><i class="iconfont">&#xe618;</i><a href="./articles.html?type={{type}}&category=${category}">{{name}}</a>
+                </li>`;
+            var lists;
+            switch (category) {
+                case 'college':
+                    lists = [{ name: '理论精华', type: 'theory' }, { name: '鲜活实验', type: 'experiment' }, { name: '心理剧场', type: 'theatre' }, { name: '百科美文', type: 'notes' }];
+                    $(".header").find("h2").html("心理学苑");
+                    break;
+                case 'heartWorld':
+                    lists = [{ name: '它山之石', type: 'storm' }, { name: '时代脉搏', type: 'date' }, { name: '大写的人', type: 'person' }, { name: '警世通言', type: 'word' }, { name: '健康中国', type: 'healthy' }];
+                    console.log($(".header").find("h2"));
+                    $(".header").find("h2").html("心观天下");
+                    break;
+            }
+            var navList = $(".navList");
+            var ul = navList.find("ul");
+            ul.empty();
+            var li;
+            lists.forEach(item => {
+                var temp = template;
+                if (item.name === '健康中国') {
+                    temp = `<li class="active"><i class="iconfont">&#xe618;</i><a href="./pptShow.html?type=healthy&category=${category}">{{name}}</a>
+                </li>`;
+                }
+                temp = temp.replace("{{type}}", item.type).replace("{{name}}", item.name);
+                ul.append(temp);
+            });
+            navList.append(ul);
         }
     };
     new Pagination({
@@ -367,13 +408,6 @@ webpackJsonp([2],[
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 6 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 7 */,
 /* 8 */,
 /* 9 */,
 /* 10 */,
@@ -392,8 +426,8 @@ __webpack_require__(0);
 
 __webpack_require__(4);
 
+__webpack_require__(7);
 __webpack_require__(5);
-__webpack_require__(6);
 
 /***/ })
 ],[14]);
